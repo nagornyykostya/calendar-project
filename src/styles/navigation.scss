@@ -1,0 +1,66 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  border-bottom: 0.5px solid #3c4043;
+
+  &__create {
+    display: flex;
+    align-items: center;
+    box-shadow: #3c4043;
+    background-color: white;
+    border-radius: 24px;
+    height: 48px;
+    color: #3c4043;
+    font-weight: 500;
+    margin-left: 20px;
+    cursor: pointer;
+
+    &_icon {
+      font-size: 36px;
+      font-weight: bold;
+      color: gold;
+    }
+  }
+  &__today {
+    box-shadow: #3c4043;
+    background-color: transparent;
+    min-height: 40px;
+    margin-left: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  &__selected-period {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 28px;
+    white-space: nowrap;
+    margin-left: 20px;
+    color: #3c4043;
+  }
+}
+
+.weeks-selectors-block {
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+
+  &__previous-week {
+    display: flex;
+    align-items: center;
+    color: #3c4043;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__next-week {
+    display: flex;
+    align-items: center;
+    color: #3c4043;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}

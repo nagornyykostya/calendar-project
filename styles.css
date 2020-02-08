@@ -1,0 +1,69 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  border-bottom: 0.5px solid #3c4043;
+}
+.navigation__create {
+  display: flex;
+  align-items: center;
+  box-shadow: #3c4043;
+  background-color: white;
+  border-radius: 24px;
+  height: 48px;
+  color: #3c4043;
+  font-weight: 500;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.navigation__create_icon {
+  font-size: 36px;
+  font-weight: bold;
+  color: gold;
+}
+.navigation__today {
+  box-shadow: #3c4043;
+  background-color: transparent;
+  min-height: 40px;
+  margin-left: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.navigation__selected-period {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 28px;
+  white-space: nowrap;
+  margin-left: 20px;
+  color: #3c4043;
+}
+
+.weeks-selectors-block {
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+}
+.weeks-selectors-block__previous-week {
+  display: flex;
+  align-items: center;
+  color: #3c4043;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.weeks-selectors-block__next-week {
+  display: flex;
+  align-items: center;
+  color: #3c4043;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/*# sourceMappingURL=styles.css.map */
