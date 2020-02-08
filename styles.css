@@ -1,10 +1,10 @@
-.navigation {
+.header {
   display: flex;
   align-items: center;
   height: 64px;
   border-bottom: 0.5px solid #3c4043;
 }
-.navigation__create {
+.header__create {
   display: flex;
   align-items: center;
   box-shadow: #3c4043;
@@ -16,12 +16,12 @@
   margin-left: 20px;
   cursor: pointer;
 }
-.navigation__create_icon {
+.header__create_icon {
   font-size: 36px;
   font-weight: bold;
   color: gold;
 }
-.navigation__today {
+.header__today {
   box-shadow: #3c4043;
   background-color: transparent;
   min-height: 40px;
@@ -29,7 +29,7 @@
   border-radius: 4px;
   cursor: pointer;
 }
-.navigation__selected-period {
+.header__selected-period {
   font-size: 22px;
   font-weight: 400;
   letter-spacing: 0;
