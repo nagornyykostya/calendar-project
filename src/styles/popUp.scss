@@ -1,0 +1,57 @@
+.pop-up-form {
+  position: fixed;
+  left: 200px;
+  top: 200px;
+  visibility: visible;
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: -1px 9px 18px -9px rgba(0, 0, 0, 0.68);
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+  &__close-btn {
+    margin-left: auto;
+    cursor: pointer;
+  }
+}
+
+.calendar-issues-form {
+  display: flex;
+  flex-direction: column;
+
+  &__title-input {
+    border: none;
+    border-bottom: #1a73e8 2px solid;
+    width: 80%;
+    padding: 5px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__date-block {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__description-input {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+
+  &__submit-btn {
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: #1a73e8;
+    color: white;
+    min-height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+}

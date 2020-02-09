@@ -69,6 +69,23 @@
     </div>
 </nav>
 
+<!-- popup form -->
+
+<div class="pop-up-form">
+    <button class="pop-up-form__close-btn"><i class="large material-icons">close</i></button>
+    <form class="calendar-issues-form">
+        <input class="calendar-issues-form__title-input" type="text" name="issue-title" placeholder="Reminder title">
+        <div class="calendar-issues-form__date-block">
+        <i class="material-icons">access_time</i>
+        <input class="calendar-issues-form__date-input" type="date" name="date">
+        <input class="calendar-issues-form__start-time-input" type="time" name="start-time">
+        <input class="calendar-issues-form__finish-time-input" type="time" name="finish-time">
+        </div>
+        <textarea class="calendar-issues-form__description-input" name="description" id="" cols="30" rows="10" placeholder="Добавить описание"></textarea>
+        <button class="calendar-issues-form__submit-btn" type="submit">Сохранить</button>
+    </form>
+</div>
+
 
     <script src="src/scripts/index.js"></script>
 </body>
