@@ -61,9 +61,65 @@
   cursor: pointer;
 }
 
+.navigation {
+  display: flex;
+  justify-content: space-around;
+}
+.navigation__time-periods {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigation__day {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 50px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.navigation__day_selected {
+  color: #1a73e8;
+}
+.navigation__day-of-week {
+  display: block;
+  font-size: 14px;
+  text-align: center;
+}
+.navigation__date-of-month {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.navigation__date-of-month_selected {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.time-slots {
+  display: flex;
+  flex-direction: column;
+}
+.time-slots__one-hour-ceil {
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+}
+
+.calendar {
+  display: flex;
+  justify-content: space-around;
 }
 
 /*# sourceMappingURL=styles.css.map */

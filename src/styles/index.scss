@@ -1,6 +1,15 @@
 @import "header.scss";
+@import "navigation.scss";
+@import "calendar.scss";
+
+
 
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+}
+
+.calendar{
+    display: flex;
+    justify-content: space-around;
 }
