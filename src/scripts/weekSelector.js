@@ -1,3 +1,6 @@
+import { initCalendar } from './storage.js'
+import { renderNavbar } from './renderNavbar.js';
+
 export const changeWeek = event => {
     if (event.target.parentElement.dataset.direction === "true") {
         initCalendar.switchWeek(true);

@@ -1,8 +1,9 @@
-import { initCalendar } from './storage'
-import { changeWeek } from './weekSelector';
-import { renderCalendar } from './renderCalendar';
-import { renderSideBar } from './renderSideBar';
-import { renderNavbar } from './renderNavbar';
+import { initCalendar } from './storage.js'
+import { renderNavbar } from './renderNavbar.js';
+import { changeWeek } from './weekSelector.js';
+import { renderCalendar } from './renderCalendar.js';
+import { renderSideBar } from './renderSideBar.js';
+
 
 // getMonday //
 

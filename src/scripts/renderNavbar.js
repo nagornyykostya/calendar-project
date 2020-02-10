@@ -1,3 +1,5 @@
+import { initCalendar } from './storage.js'
+
 export const renderNavbar = () => {
     const navBar = document.querySelector(".navigation__grid");
     let arrNavBarElements = [];
