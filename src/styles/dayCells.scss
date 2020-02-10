@@ -1,4 +1,6 @@
 .day-cells {
+    position: relative;
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -15,6 +17,21 @@
         min-width: 81px;
         height: 40px;
         border: 1px solid black;
+    }
+}
+
+.hours-column {
+    display: flex;
+    flex-direction: column;
+
+    &__hour-cell{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 81px;
+        min-width: 81px;
+        height: 40px;
     }
 }
 

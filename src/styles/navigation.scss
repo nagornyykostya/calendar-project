@@ -1,51 +1,65 @@
 .navigation {
-    position: relative;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-start;
+  background-color: white;
+
+  &__time-periods {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    &__time-periods {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
+  &__day {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px;
+    width: 81px;
+    min-width: 81px;
+    margin-top: 20px;
+    cursor: pointer;
+
+    &_selected {
+      color: #1a73e8;
     }
+  }
 
-    &__day {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        min-height: 50px;
-        width: 81px;
-        min-width: 81px;
-        margin-top: 20px;
-        cursor: pointer;
+  &__gmt {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 50px;
+    width: 81px;
+    min-width: 81px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
 
-        &_selected {
-            color: #1a73e8;
-        }
+  &__day-of-week {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  &__date-of-month {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    &_selected {
+      background-color: #1a73e8;
+      color: white;
     }
-
-    &__day-of-week {
-        display: block;
-        font-size: 14px;
-        text-align: center;
-    }
-
-    &__date-of-month {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 26px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-
-        &_selected {
-            background-color: #1a73e8;
-            color: white;
-        }
-    }
+  }
 }
 
 // .time-slots {
