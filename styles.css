@@ -62,8 +62,9 @@
 }
 
 .navigation {
+  position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 .navigation__time-periods {
   display: flex;
@@ -77,6 +78,8 @@
   justify-content: space-between;
   align-items: center;
   min-height: 50px;
+  width: 81px;
+  min-width: 81px;
   margin-top: 20px;
   cursor: pointer;
 }
@@ -102,21 +105,11 @@
   color: white;
 }
 
-.time-slots {
-  display: flex;
-  flex-direction: column;
-}
-.time-slots__one-hour-ceil {
-  border: 1px solid black;
-  height: 50px;
-  width: 50px;
-}
-
 .pop-up-form {
   position: fixed;
   left: 200px;
   top: 200px;
-  visibility: visible;
+  visibility: hidden;
   width: 400px;
   height: 400px;
   border-radius: 10px;
@@ -165,14 +158,28 @@
   margin-bottom: 15px;
 }
 
+.day-cells {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.day-column {
+  display: flex;
+  flex-direction: column;
+  width: 81px;
+  min-width: 81px;
+}
+.day-column__hour-cell {
+  width: 81px;
+  min-width: 81px;
+  height: 40px;
+  border: 1px solid black;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-}
-
-.calendar {
-  display: flex;
-  justify-content: space-around;
 }
 
 /*# sourceMappingURL=styles.css.map */

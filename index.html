@@ -11,80 +11,139 @@
     <link rel="stylesheet" href="styles.css">
     <title>Calendar</title>
 </head>
+
 <body>
 
     <!-- head -->
 
-<header class="header">
-    <button class="header__create">
-        <i class="large material-icons header__create_icon">add</i>
-        Создать
-    </button>
-    <button class="header__today">Сегодня</button>
-    <div class="weeks-selectors-block">
-        <button class="weeks-selectors-block__previous-week">
-            <i class="large material-icons">chevron_left
-            </i>
+    <header class="header">
+        <button class="header__create">
+            <i class="large material-icons header__create_icon">add</i>
+            Создать
         </button>
-        <button class="weeks-selectors-block__next-week">
-            <i class="large material-icons">chevron_right</i>
-        </button>
-    </div>
-    <span class="header__selected-period">Янв - февр 2020</span>
-</header>
-
-
-<!-- navigation -->
-
-<nav class="navigation">
-    <div class="navigation__day">
-        <div class="">
-        <span class="navigation__day-of-week">ПН</span>
-        <span class="navigation__date-of-month">27</span>
+        <button class="header__today">Сегодня</button>
+        <div class="weeks-selectors-block">
+            <button class="weeks-selectors-block__previous-week">
+                <i class="large material-icons">chevron_left
+                </i>
+            </button>
+            <button class="weeks-selectors-block__next-week">
+                <i class="large material-icons">chevron_right</i>
+            </button>
         </div>
-    </div>
-    <div class="navigation__day">
-        <span class="navigation__day-of-week">ВТ</span>
-        <span class="navigation__date-of-month">28</span>
-    </div>
-    <div class="navigation__day">
-        <span class="navigation__day-of-week">СР</span>
-        <span class="navigation__date-of-month">29</span>
-    </div>
-    <div class="navigation__day">
-        <span class="navigation__day-of-week">ЧТ</span>
-        <span class="navigation__date-of-month">30</span>
-    </div>
-    <div class="navigation__day">
-        <span class="navigation__day-of-week">ПТ</span>
-        <span class="navigation__date-of-month">31</span>
-    </div>
-    <div class="navigation__day">
-        <span class="navigation__day-of-week">СБ</span>
-        <span class="navigation__date-of-month">1</span>
-    </div>
-    <div class="navigation__day navigation__day_selected">
-        <span class="navigation__day-of-week">ВС</span>
-        <span class="navigation__date-of-month navigation__date-of-month_selected">2</span>
-    </div>
-</nav>
+        <span class="header__selected-period">Янв - февр 2020</span>
+    </header>
 
-<!-- popup form -->
 
-<div class="pop-up-form">
-    <button class="pop-up-form__close-btn"><i class="large material-icons">close</i></button>
-    <form class="calendar-issues-form">
-        <input class="calendar-issues-form__title-input" type="text" name="issue-title" placeholder="Reminder title">
-        <div class="calendar-issues-form__date-block">
-        <i class="material-icons">access_time</i>
-        <input class="calendar-issues-form__date-input" type="date" name="date">
-        <input class="calendar-issues-form__start-time-input" type="time" name="start-time">
-        <input class="calendar-issues-form__finish-time-input" type="time" name="finish-time">
+    <!-- navigation -->
+
+    <nav class="navigation">
+        <div class="navigation__day">
+            <div class="">
+                <span class="navigation__day-of-week">ПН</span>
+                <span class="navigation__date-of-month">27</span>
+            </div>
         </div>
-        <textarea class="calendar-issues-form__description-input" name="description" id="" cols="30" rows="10" placeholder="Добавить описание"></textarea>
-        <button class="calendar-issues-form__submit-btn" type="submit">Сохранить</button>
-    </form>
-</div>
+        <div class="navigation__day">
+            <span class="navigation__day-of-week">ВТ</span>
+            <span class="navigation__date-of-month">28</span>
+        </div>
+        <div class="navigation__day">
+            <span class="navigation__day-of-week">СР</span>
+            <span class="navigation__date-of-month">29</span>
+        </div>
+        <div class="navigation__day">
+            <span class="navigation__day-of-week">ЧТ</span>
+            <span class="navigation__date-of-month">30</span>
+        </div>
+        <div class="navigation__day">
+            <span class="navigation__day-of-week">ПТ</span>
+            <span class="navigation__date-of-month">31</span>
+        </div>
+        <div class="navigation__day">
+            <span class="navigation__day-of-week">СБ</span>
+            <span class="navigation__date-of-month">1</span>
+        </div>
+        <div class="navigation__day navigation__day_selected">
+            <span class="navigation__day-of-week">ВС</span>
+            <span class="navigation__date-of-month navigation__date-of-month_selected">2</span>
+        </div>
+    </nav>
+
+    <!-- popup form -->
+
+    <div class="pop-up-form">
+        <button class="pop-up-form__close-btn"><i class="large material-icons">close</i></button>
+        <form class="calendar-issues-form">
+            <input class="calendar-issues-form__title-input" type="text" name="issue-title"
+                placeholder="Reminder title">
+            <div class="calendar-issues-form__date-block">
+                <i class="material-icons">access_time</i>
+                <input class="calendar-issues-form__date-input" type="date" name="date">
+                <input class="calendar-issues-form__start-time-input" type="time" name="start-time">
+                <input class="calendar-issues-form__finish-time-input" type="time" name="finish-time">
+            </div>
+            <textarea class="calendar-issues-form__description-input" name="description" id="" cols="30" rows="10"
+                placeholder="Добавить описание"></textarea>
+            <button class="calendar-issues-form__submit-btn" type="submit">Сохранить</button>
+        </form>
+    </div>
+
+
+    <!-- day cells  -->
+
+
+    <section class="day-cells">
+        <div class="day-column">
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+        </div>
+        <div class="day-column">
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+        </div>
+        <div class="day-column">
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+        </div>
+        <div class="day-column">
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+        </div>
+        <div class="day-column">
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+        </div>
+        <div class="day-column">
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+        </div>
+        <div class="day-column">
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+            <div class="day-column__hour-cell"></div>
+        </div>
+
 
 
     <script src="src/scripts/index.js"></script>

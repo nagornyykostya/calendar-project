@@ -1,0 +1,38 @@
+.day-cells {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}   
+
+.day-column {
+    display: flex;
+    flex-direction: column;
+    width: 81px;
+    min-width: 81px;
+
+    &__hour-cell{
+        width: 81px;
+        min-width: 81px;
+        height: 40px;
+        border: 1px solid black;
+    }
+}
+
+// .day-cells {
+//     display: flex;
+//     flex-direction: row;
+//     border-collapse: collapse;
+//     table-layout: fixed;
+//     width: 100%;
+// }   
+
+// .day-column {
+//     // display: flex;
+//     // flex-direction: column;
+
+//     &__hour-cell{
+//         // width: 100px;
+//         // height: 40px;
+//          border: 1px solid black;
+//     }
+// }

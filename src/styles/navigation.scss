@@ -1,6 +1,7 @@
 .navigation {
+    position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
 
     &__time-periods {
         display: flex;
@@ -15,6 +16,8 @@
         justify-content: space-between;
         align-items: center;
         min-height: 50px;
+        width: 81px;
+        min-width: 81px;
         margin-top: 20px;
         cursor: pointer;
 
@@ -45,13 +48,13 @@
     }
 }
 
-.time-slots {
-    display: flex;
-    flex-direction: column;
+// .time-slots {
+//     display: flex;
+//     flex-direction: column;
 
-    &__one-hour-ceil {
-        border: 1px solid black;
-        height: 50px;
-        width: 50px;
-    }
-}
+//     &__one-hour-ceil {
+//         border: 1px solid black;
+//         height: 50px;
+//         width: 50px;
+//     }
+// }

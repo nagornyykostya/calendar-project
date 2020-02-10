@@ -2,6 +2,8 @@
 @import "navigation.scss";
 @import "popUp.scss";
 @import "calendar.scss";
+@import "dayCells.scss";
+
 
 
 
@@ -9,9 +11,4 @@
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-}
-
-.calendar{
-    display: flex;
-    justify-content: space-around;
 }
