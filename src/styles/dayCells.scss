@@ -1,55 +1,52 @@
 .day-cells {
-    position: relative;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}   
+  position: relative;
+  margin-top: 160px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
 
 .day-column {
-    display: flex;
-    flex-direction: column;
-    width: 81px;
-    min-width: 81px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-right: 1px solid grey;
 
-    &__hour-cell{
-        width: 81px;
-        min-width: 81px;
-        height: 40px;
-        border: 1px solid black;
+  &:last-child {
+    border-right: none;
+  }
+
+  &__hour-cell {
+    height: 40px;
+    border-bottom: 1px solid grey;
+
+    &:last-child {
+      border-bottom: none;
     }
+  }
+}
+
+.day-columns {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 1;
 }
 
 .hours-column {
+  display: flex;
+  flex-direction: column;
+  color: grey;
+
+  &__hour-cell {
     display: flex;
     flex-direction: column;
-
-    &__hour-cell{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-end;
-        width: 81px;
-        min-width: 81px;
-        height: 40px;
-    }
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 10px;
+    width: 81px;
+    min-width: 81px;
+    height: 40px;
+  }
 }
-
-// .day-cells {
-//     display: flex;
-//     flex-direction: row;
-//     border-collapse: collapse;
-//     table-layout: fixed;
-//     width: 100%;
-// }   
-
-// .day-column {
-//     // display: flex;
-//     // flex-direction: column;
-
-//     &__hour-cell{
-//         // width: 100px;
-//         // height: 40px;
-//          border: 1px solid black;
-//     }
-// }

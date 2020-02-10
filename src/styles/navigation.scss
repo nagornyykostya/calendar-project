@@ -2,8 +2,20 @@
   position: fixed;
   z-index: 1;
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   background-color: white;
+  margin-top: 64px;
+
+  &__grid {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-around;
+    width: 100vw;
+
+  }
+  
 
   &__time-periods {
     display: flex;
@@ -18,10 +30,14 @@
     justify-content: space-between;
     align-items: center;
     min-height: 50px;
-    width: 81px;
-    min-width: 81px;
+    // width: 81px;
+    // min-width: 81px;
     margin-top: 20px;
     cursor: pointer;
+
+    &:last-child {
+      margin-right: 70px;
+    }
 
     &_selected {
       color: #1a73e8;
@@ -61,14 +77,3 @@
     }
   }
 }
-
-// .time-slots {
-//     display: flex;
-//     flex-direction: column;
-
-//     &__one-hour-ceil {
-//         border: 1px solid black;
-//         height: 50px;
-//         width: 50px;
-//     }
-// }
