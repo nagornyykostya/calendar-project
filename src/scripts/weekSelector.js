@@ -1,16 +1,17 @@
 import { initCalendar } from './storage.js'
 import { renderNavbar } from './renderNavbar.js';
+import { renderCalendar } from './renderCalendar.js';
+
 
 export const changeWeek = event => {
     if (event.target.parentElement.dataset.direction === "true") {
         initCalendar.switchWeek(true);
-        console.log('forward week');
-        console.log(initCalendar.selectedWeek)
         renderNavbar();
+        renderCalendar();
 
     } else {
         initCalendar.switchWeek(false);
-        console.log('backward week');
         renderNavbar();
-    } 
+        renderCalendar();
+    }
 }

@@ -33,6 +33,7 @@ nextWeek.addEventListener('click', changeWeek);
 const onTodayClick = () => {
     initCalendar.getMonday()
     renderNavbar();
+    renderCalendar();
 }
 
 const todayBtn = document.querySelector('.header__today');
