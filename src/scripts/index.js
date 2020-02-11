@@ -1,5 +1,5 @@
-import { initCalendar } from './storage.js'
-import { remindersStorage } from './storage.js'
+import { initCalendar } from './storage.js';
+import { remindersStorage } from './storage.js';
 import { renderNavbar } from './renderNavbar.js';
 import { changeWeek } from './weekSelector.js';
 import { renderCalendar } from './renderCalendar.js';
@@ -46,14 +46,14 @@ closePopUpBtn.addEventListener('click', onCloseBtn);
 
 const popUpForm = document.querySelector(".calendar-issues-form");
 
+const title = document.getElementById("title");
+const date = document.getElementById("date");
+const startTime = document.getElementById("startTime");
+const finishTime = document.getElementById("finishTime");
+const description = document.getElementById("description");
+
 const onSubmit = event => {
     event.preventDefault();
-    const title = document.getElementById("title");
-    const date = document.getElementById("date");
-    const startTime = document.getElementById("startTime");
-    const finishTime = document.getElementById("finishTime");
-    const description = document.getElementById("description");
-
     remindersStorage.push({
         title: title.value,
         date: date.value,
@@ -73,11 +73,9 @@ const onSubmit = event => {
 }
 popUpForm.addEventListener("submit", onSubmit)
 
-
-
-
-
 // Today Btn
 const createBtn = document.querySelector('.header__create');
 const onTodayBtnClick = () => popUp.setAttribute("style", "visibility: visible;");
 createBtn.addEventListener('click', onTodayBtnClick);
+
+

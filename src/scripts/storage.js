@@ -10,7 +10,7 @@ export const initCalendar = {
             this.selectedWeek = (new Date().getTime() - (6 * this.miliSecondsPerDay));
         } else {
             this.selectedWeek = new Date().getTime() - ((getDayOfWeek - (getDayOfWeek - 1)) * this.miliSecondsPerDay);
-        }  
+        }
     },
     switchWeek(direction) {
         if (direction) {
@@ -22,11 +22,60 @@ export const initCalendar = {
 }
 
 export const remindersStorage = [
-    {title: "",
-    date:"",
-    startTime: "",
-    finishTime: "",
-    description: "",
-    id: Math.random(),
-},
+    {
+        title: "",
+        date: "",
+        startTime: "",
+        finishTime: "",
+        description: "",
+        id: Math.random(),
+    },
+    {
+        title: "Do lesson",
+        date: "2020-04-12",
+        startTime: "",
+        finishTime: "",
+        description: "sadsaddsa",
+        id: 0.12112313
+    },
+    {
+        title: "Buy products",
+        date: "2020-02-11",
+        startTime: "00:15",
+        finishTime: "",
+        description: "dsasddsa",
+        id: 0.3918664045401694
+    },
+    {
+        title: "Training",
+        date: "2020-02-10",
+        startTime: "00:15",
+        finishTime: "00:30",
+        description: "sadsaddsa",
+        id: 0.168981482426398
+    },
+    {
+        title: "Shopping",
+        date: "2020-02-13",
+        startTime: "13:15",
+        finishTime: "",
+        description: "dsasddsa",
+        id: 0.3918664045401694
+    },
+    {
+        title: "ddddddd",
+        date: "2020-02-15",
+        startTime: "12:15",
+        finishTime: "",
+        description: "dsasddsa",
+        id: 0.3918664045401694
+    },
+    {
+        title: "adsdd",
+        date: "2020-03-11",
+        startTime: "00:45",
+        finishTime: "01:30",
+        description: "sadsaddsa",
+        id: 0.1689814824216398
+    }
 ]

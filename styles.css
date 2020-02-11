@@ -214,6 +214,11 @@
   border-right: none;
 }
 .day-column__hour-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 10px;
   height: 40px;
   border-bottom: 1px solid grey;
 }
