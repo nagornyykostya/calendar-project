@@ -7,10 +7,10 @@ export const initCalendar = {
         if (getDayOfWeek === 1) {
             this.selectedWeek = new Date().getTime();
         } else if (getDayOfWeek === 0) {
-            this.initCalendar = (new Date().getTime() - (6 * this.miliSecondsPerDay));
+            this.selectedWeek = (new Date().getTime() - (6 * this.miliSecondsPerDay));
         } else {
-            this.initCalendar = new Date().getTime() - ((getDayOfWeek - 1) * this.miliSecondsPerDay);
-        }   
+            this.selectedWeek = new Date().getTime() - ((getDayOfWeek - (getDayOfWeek - 1)) * this.miliSecondsPerDay);
+        }  
     },
     switchWeek(direction) {
         if (direction) {
