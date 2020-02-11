@@ -20,3 +20,13 @@ export const initCalendar = {
         }
     }
 }
+
+export const remindersStorage = [
+    {title: "",
+    date:"",
+    startTime: "",
+    finishTime: "",
+    description: "",
+    id: Math.random(),
+},
+]

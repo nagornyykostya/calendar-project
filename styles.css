@@ -134,9 +134,11 @@
 
 .pop-up-form {
   position: fixed;
-  left: 600px;
-  top: 200px;
-  visibility: visible;
+  left: 50%;
+  top: 50%;
+  margin-top: -200px;
+  margin-left: -200px;
+  visibility: hidden;
   z-index: 2;
   width: 400px;
   height: 400px;
@@ -149,6 +151,8 @@
 }
 .pop-up-form__close-btn {
   margin-left: auto;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
 }
 
@@ -169,12 +173,17 @@
   align-items: center;
   margin-left: 10px;
   margin-bottom: 20px;
+  border: none;
+}
+.calendar-issues-form__date-input, .calendar-issues-form__start-time-input, .calendar-issues-form__finish-time-input {
+  border: none;
 }
 .calendar-issues-form__description-input {
   margin-left: 10px;
   margin-right: 10px;
   padding: 5px;
   margin-bottom: 20px;
+  border: none;
 }
 .calendar-issues-form__submit-btn {
   margin-left: auto;
