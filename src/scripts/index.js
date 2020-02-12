@@ -5,7 +5,6 @@ import { changeWeek } from './weekSelector.js';
 import { renderCalendar } from './renderCalendar.js';
 import { renderSideBar } from './renderSideBar.js';
 
-
 // getMonday //
 
 initCalendar.getMonday()
@@ -22,8 +21,21 @@ renderSideBar();
 
 renderCalendar();
 
-// Switch week with navigation;
+// reset Pop Up form
 
+const resetPopUpForm = () => {
+    title.value = null;
+    date.value = null;
+    startTime.value = null;
+    finishTime.value = null;
+    description.value = null;
+    initCalendar.id = null;
+    deleteBtn.disabled = true;
+    initCalendar.editMode = false;
+    popUp.setAttribute("style", "visibility: hidden;");
+}
+
+// Switch week with navigation;
 
 const previousWeek = document.querySelector(".weeks-selectors-block__previous-week");
 previousWeek.addEventListener('click', changeWeek);
@@ -39,47 +51,24 @@ const onTodayClick = () => {
 const todayBtn = document.querySelector('.header__today');
 todayBtn.addEventListener('click', onTodayClick);
 
-
 // Delete BTN 
 
 const deleteBtn = document.querySelector(".calendar-issues-form__delete-btn")
 const onDelete = () => {
     const getIndexOfElement = remindersStorage.findIndex(element => element.id == initCalendar.id);
     remindersStorage.splice(getIndexOfElement, 1);
-
-    title.value = null;
-    date.value = null;
-    startTime.value = null;
-    finishTime.value = null;
-    description.value = null;
-    deleteBtn.disabled = true;
-    popUp.setAttribute("style", "visibility: hidden;");
-    initCalendar.id = null;
-    initCalendar.editMode = false;
+    resetPopUpForm();
     renderCalendar();
 }
-
 deleteBtn.addEventListener('click', onDelete)
 
 // Popup form
 const popUp = document.querySelector('.pop-up-form');
 const closePopUpBtn = document.querySelector('.pop-up-form__close-btn');
-const onCloseBtn = () => {
-    popUp.setAttribute("style", "visibility: hidden;")
-    title.value = null;
-    date.value = null;
-    startTime.value = null;
-    finishTime.value = null;
-    description.value = null;
-    deleteBtn.disabled = true;
-    initCalendar.editMode = false;
-
-
-};
+const onCloseBtn = () => resetPopUpForm();
 closePopUpBtn.addEventListener('click', onCloseBtn);
 
 const popUpForm = document.querySelector(".calendar-issues-form");
-
 const title = document.getElementById("title");
 const date = document.getElementById("date");
 const startTime = document.getElementById("startTime");
@@ -109,16 +98,7 @@ const onSubmit = event => {
         });
     }
     renderCalendar();
-    title.value = null;
-    date.value = null;
-    startTime.value = null;
-    finishTime.value = null;
-    description.value = null;
-    initCalendar.id = null;
-    deleteBtn.disabled = true;
-    initCalendar.editMode = false;
-    popUp.setAttribute("style", "visibility: hidden;");
-
+    resetPopUpForm()
     console.log(remindersStorage);
 }
 popUpForm.addEventListener("submit", onSubmit)
@@ -128,11 +108,6 @@ popUpForm.addEventListener("submit", onSubmit)
 const createBtn = document.querySelector('.header__create');
 const onCreateBtnClick = () => {
     popUp.setAttribute("style", "visibility: visible;")
-    title.value = null;
-    date.value = null;
-    startTime.value = null;
-    finishTime.value = null;
-    description.value = null;
 };
 createBtn.addEventListener('click', onCreateBtnClick);
 
