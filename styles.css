@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   height: 64px;
-  border-bottom: 0.5px solid #3c4043;
+  border-bottom: 0.5px solid grey;
   background-color: white;
   position: fixed;
   z-index: 2;
@@ -233,12 +233,18 @@
   justify-content: center;
   align-items: flex-start;
   padding-left: 10px;
-  height: 40px;
-  border-bottom: 1px solid grey;
+  height: 60px;
+  border-top: 1px solid grey;
   cursor: pointer;
 }
-.day-column__hour-cell:last-child {
-  border-bottom: none;
+.day-column__hour-cell:first-child {
+  border-top: none;
+}
+.day-column__current-time-line {
+  position: absolute;
+  background-color: red;
+  width: 100px;
+  height: 5px;
 }
 
 .day-columns {
@@ -257,12 +263,12 @@
 .hours-column__hour-cell {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-end;
   padding-right: 10px;
   width: 81px;
   min-width: 81px;
-  height: 40px;
+  height: 60px;
 }
 
 * {

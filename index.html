@@ -42,11 +42,11 @@
         <button class="pop-up-form__close-btn"><i class="large material-icons">close</i></button>
         <form class="calendar-issues-form">
             <input class="calendar-issues-form__title-input" type="text" id="title" name="issue-title"
-                placeholder="Reminder title">
+                placeholder="Reminder title" required>
             <div class="calendar-issues-form__date-block">
                 <i class="material-icons">access_time</i>
-                <input class="calendar-issues-form__date-input" type="date" id="date" name="date">
-                <input class="calendar-issues-form__start-time-input" type="time" id="startTime" name="start-time" step="900">
+                <input class="calendar-issues-form__date-input" type="date" id="date" name="date" required>
+                <input class="calendar-issues-form__start-time-input" type="time" id="startTime" name="start-time" step="900" required>
                 <input class="calendar-issues-form__finish-time-input" type="time" id="finishTime" name="finish-time" step="900">
             </div>
             <textarea class="calendar-issues-form__description-input" name="description" id="description" cols="30" rows="10"
