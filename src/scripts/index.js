@@ -116,6 +116,7 @@ const onSubmit = event => {
     description.value = null;
     initCalendar.id = null;
     deleteBtn.disabled = true;
+    initCalendar.editMode = false;
     popUp.setAttribute("style", "visibility: hidden;");
 
     console.log(remindersStorage);
