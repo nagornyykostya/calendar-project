@@ -2,6 +2,8 @@ export const initCalendar = {
     weekDays: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
     miliSecondsPerDay: 1000 * 60 * 60 * 24,
     selectedWeek: null,
+    editMode: false,
+    tempId: null,
     getMonday() {
         let getDayOfWeek = new Date().getDay();
         if (getDayOfWeek === 1) {
@@ -52,7 +54,7 @@ export const remindersStorage = [
         startTime: "00:15",
         finishTime: "00:30",
         description: "sadsaddsa",
-        id: 0.168981482426398
+        id: 0.1689814212133232
     },
     {
         title: "Shopping",
@@ -60,7 +62,7 @@ export const remindersStorage = [
         startTime: "13:15",
         finishTime: "",
         description: "dsasddsa",
-        id: 0.3918664045401694
+        id: 0.32131324213
     },
     {
         title: "ddddddd",
@@ -68,7 +70,7 @@ export const remindersStorage = [
         startTime: "12:15",
         finishTime: "",
         description: "dsasddsa",
-        id: 0.3918664045401694
+        id: 0.3247123123
     },
     {
         title: "adsdd",
@@ -76,6 +78,6 @@ export const remindersStorage = [
         startTime: "00:45",
         finishTime: "01:30",
         description: "sadsaddsa",
-        id: 0.1689814824216398
+        id: 0.123123454312312
     }
 ]

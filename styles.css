@@ -94,7 +94,6 @@
   align-items: center;
   min-height: 50px;
   margin-top: 20px;
-  cursor: pointer;
 }
 .navigation__day:last-child {
   margin-right: 70px;
@@ -221,6 +220,7 @@
   padding-left: 10px;
   height: 40px;
   border-bottom: 1px solid grey;
+  cursor: pointer;
 }
 .day-column__hour-cell:last-child {
   border-bottom: none;

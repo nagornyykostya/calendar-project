@@ -42,7 +42,14 @@ todayBtn.addEventListener('click', onTodayClick);
 // Popup form
 const popUp = document.querySelector('.pop-up-form');
 const closePopUpBtn = document.querySelector('.pop-up-form__close-btn');
-const onCloseBtn = () => popUp.setAttribute("style", "visibility: hidden;");
+const onCloseBtn = () => {
+    popUp.setAttribute("style", "visibility: hidden;")
+    title.value = null;
+    date.value = null;
+    startTime.value = null;
+    finishTime.value = null;
+    description.value = null;
+};
 closePopUpBtn.addEventListener('click', onCloseBtn);
 
 const popUpForm = document.querySelector(".calendar-issues-form");
@@ -55,14 +62,27 @@ const description = document.getElementById("description");
 
 const onSubmit = event => {
     event.preventDefault();
-    remindersStorage.push({
-        title: title.value,
-        date: date.value,
-        startTime: startTime.value,
-        finishTime: finishTime.value,
-        description: description.value,
-        id: Math.random()
-    });
+
+    if (initCalendar.editMode) {
+        remindersStorage.find(item => item.id === initCalendar.id);
+        let getEditObject = remindersStorage.find(item => item.id == initCalendar.id);
+        getEditObject.title = title.value;
+        getEditObject.date = date.value;
+        getEditObject.startTime = startTime.value;
+        getEditObject.finishTime = finishTime.value;
+        getEditObject.description = description.value;
+    } else {
+
+        remindersStorage.push({
+            title: title.value,
+            date: date.value,
+            startTime: startTime.value,
+            finishTime: finishTime.value,
+            description: description.value,
+            id: Math.random()
+        });
+    }
+    renderCalendar();
     title.value = null;
     date.value = null;
     startTime.value = null;
@@ -70,13 +90,40 @@ const onSubmit = event => {
     description.value = null;
 
     popUp.setAttribute("style", "visibility: hidden;");
+
     console.log(remindersStorage);
 }
 popUpForm.addEventListener("submit", onSubmit)
 
-// Today Btn
+// Create Btn
+
 const createBtn = document.querySelector('.header__create');
-const onTodayBtnClick = () => popUp.setAttribute("style", "visibility: visible;");
-createBtn.addEventListener('click', onTodayBtnClick);
+const onCreateBtnClick = () => {
+    popUp.setAttribute("style", "visibility: visible;")
+    title.value = null;
+    date.value = null;
+    startTime.value = null;
+    finishTime.value = null;
+    description.value = null;
+};
+createBtn.addEventListener('click', onCreateBtnClick);
 
+// Event listener for calendar cells 
 
+const dayColumns = document.querySelector(".day-columns");
+
+const onCalendarClick = (event) => {
+    console.log(event.toElement.id);
+    let getObjectById = remindersStorage.find(item => item.id == event.toElement.id)
+    title.value = getObjectById.title;
+    date.value = getObjectById.date;
+    startTime.value = getObjectById.startTime;
+    finishTime.value = getObjectById.finishTime;
+    description.value = getObjectById.description;
+    initCalendar.editMode = true;
+    initCalendar.id = event.toElement.id;
+    console.log(getObjectById)
+    popUp.setAttribute("style", "visibility: visible;")
+}
+
+dayColumns.addEventListener('click', onCalendarClick);

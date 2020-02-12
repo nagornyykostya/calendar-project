@@ -13,12 +13,12 @@ export const renderCalendar = () => {
         for (let i = 0; i < 24; i++) {
             if (remindersPerDay) {
                 if (getRemindersObjByHourStart(remindersPerDay, i) != undefined) {
-                    arrDayCells.push(`<div class="day-column__hour-cell" data-hour="${i < 10 ? "0" + i : i}">${getRemindersObjByHourStart(remindersPerDay, i).title}</div>`);
+                    arrDayCells.push(`<div class="day-column__hour-cell" id="${getRemindersObjByHourStart(remindersPerDay, i).id}">${getRemindersObjByHourStart(remindersPerDay, i).title}</div>`);
                 } else {
-                    arrDayCells.push(`<div class="day-column__hour-cell" data-hour="${i < 10 ? "0" + i : i}"></div>`);
+                    arrDayCells.push(`<div class="day-column__hour-cell" id="${i < 10 ? "0" + i : i}"></div>`);
                 }
             } else {
-                arrDayCells.push(`<div class="day-column__hour-cell" data-hour="${i < 10 ? "0" + i : i}"></div>`);
+                arrDayCells.push(`<div class="day-column__hour-cell" id="${i < 10 ? "0" + i : i}"></div>`);
             }
         }
         let columnCellsElements = arrDayCells.join('');
