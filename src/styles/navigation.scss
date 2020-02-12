@@ -1,6 +1,6 @@
 .navigation {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -50,6 +50,7 @@
     width: 81px;
     min-width: 81px;
     margin-top: 20px;
+    font-size: 12px;
     cursor: pointer;
   }
 

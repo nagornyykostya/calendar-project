@@ -18,17 +18,30 @@
 
   &__hour-cell {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     padding-left: 10px;
     height: 60px;
     border-top: 1px solid grey;
-    cursor: pointer;
+    
 
     &:first-child {
       border-top: none;
     }
+  }
+
+  &__reminder-item {
+    position: absolute;
+    top: 0px;
+    font-size: 14px;
+    background-color: #a2c9fb;
+    border-radius: 4px;
+    width: 150px;
+    padding: 1px;
+    z-index: 1;
+    cursor: pointer;
   }
   &__current-time-line {
     position: absolute;
@@ -60,5 +73,6 @@
     width: 81px;
     min-width: 81px;
     height: 60px;
+    font-size: 12px;
   }
 }

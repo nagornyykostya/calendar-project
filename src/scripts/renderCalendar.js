@@ -13,13 +13,16 @@ export const renderCalendar = () => {
         let remindersPerDay = getRemindersArrFilterByWeek(datesPerWeek);
         for (let i = 0; i < 24; i++) {
             if (remindersPerDay) {
-                if (getRemindersObjByHourStart(remindersPerDay, i) != undefined) {
-                    arrDayCells.push(`<div class="day-column__hour-cell" id="${getRemindersObjByHourStart(remindersPerDay, i).id}"><div>${getRemindersObjByHourStart(remindersPerDay, i).title} ${getRemindersObjByHourStart(remindersPerDay, i).finishTime}</div></div>`);
+                const reminder = getRemindersObjByHourStart(remindersPerDay, i);
+                if (reminder != undefined) {
+                    const duration = getDuration(reminder.finishTime, reminder.startTime);
+                    const startMinutes = getMinutesStart(reminder.startTime);
+                    arrDayCells.push(`<div class="day-column__hour-cell"><div class="day-column__reminder-item" style="height:${duration}px;top:${startMinutes}px;" id="${reminder.id}">${reminder.title} ${reminder.startTime} - ${reminder.finishTime}</div></div>`);
                 } else {
-                    arrDayCells.push(`<div class="day-column__hour-cell" id="${i < 10 ? "0" + i : i}"></div>`);
+                    arrDayCells.push(`<div class="day-column__hour-cell" ></div>`);
                 }
             } else {
-                arrDayCells.push(`<div class="day-column__hour-cell" id="${i < 10 ? "0" + i : i}"></div>`);
+                arrDayCells.push(`<div class="day-column__hour-cell" ></div>`);
             }
         }
         let columnCellsElements = arrDayCells.join('');
@@ -44,3 +47,26 @@ const renderCurrentTimeLine = () => {
 }
 
 
+// let firstDate = '11:43';
+// let secondDate = '13:14';
+			
+// let getDate = (string) => new Date(0, 0,0, string.split(':')[0], string.split(':')[1]); //получение даты из строки (подставляются часы и минуты
+// let different = (getDate(secondDate) - getDate(firstDate));
+
+// let hours = Math.floor((different % 86400000) / 3600000);
+// let minutes = Math.round(((different % 86400000) % 3600000) / 60000);
+// let result = hours + ':' + minutes;
+
+// console.log(result);
+
+const getDuration = (finishTime, startTime) => {
+    let getDate = (string) => new Date(0, 0,0, string.split(':')[0], string.split(':')[1]);
+    let different = (getDate(finishTime) - getDate(startTime));
+    let hours = Math.floor((different % 86400000) / 3600000);
+    let minutes = Math.round(((different % 86400000) % 3600000) / 60000);
+    return hours * 60 + minutes;
+}
+
+const getMinutesStart = (startTime) => {
+   return startTime.split(':')[1];
+}

@@ -11,19 +11,21 @@
   &__create {
     display: flex;
     align-items: center;
-    box-shadow: #3c4043;
+    padding-right: 10px;
     background-color: white;
     border-radius: 24px;
     height: 48px;
     color: #3c4043;
-    font-weight: 500;
     margin-left: 20px;
     cursor: pointer;
 
     &_icon {
       font-size: 36px;
       font-weight: bold;
-      color: gold;
+      margin-right: 3px;
+      background: linear-gradient(-120deg, #4285f4, #34a853, #fbbc05, #ea4335);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
   &__today {

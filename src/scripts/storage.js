@@ -43,7 +43,7 @@ export const remindersStorage = [
     {
         title: "Buy products",
         date: "2020-02-11",
-        startTime: "00:15",
+        startTime: "00:45",
         finishTime: "01:15",
         description: "dsasddsa",
         id: 0.3918664045401694
@@ -52,22 +52,22 @@ export const remindersStorage = [
         title: "Training",
         date: "2020-02-10",
         startTime: "00:15",
-        finishTime: "00:30",
+        finishTime: "1:45",
         description: "sadsaddsa",
         id: 0.1689814212133232
     },
     {
         title: "Shopping",
         date: "2020-02-13",
-        startTime: "13:15",
-        finishTime: "14:15",
+        startTime: "13:45",
+        finishTime: "15:45",
         description: "dsasddsa",
         id: 0.32131324213
     },
     {
         title: "ddddddd",
         date: "2020-02-15",
-        startTime: "12:15",
+        startTime: "12:30",
         finishTime: "13:15",
         description: "dsasddsa",
         id: 0.3247123123
