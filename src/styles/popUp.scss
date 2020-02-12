@@ -56,8 +56,26 @@
     border: none;
   }
 
-  &__submit-btn {
+  &__actions {
+    display: flex;
+  }
+  &__delete-btn {
     margin-left: auto;
+    margin-right: 15px;
+    background-color: #ec4d4d;
+    color: white;
+    min-height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+
+    &:disabled {
+      background-color: #f5d2d2;
+    }
+    
+  }
+
+  &__submit-btn {
     margin-right: 10px;
     background-color: #1a73e8;
     color: white;

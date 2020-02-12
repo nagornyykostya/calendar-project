@@ -184,8 +184,23 @@
   margin-bottom: 20px;
   border: none;
 }
-.calendar-issues-form__submit-btn {
+.calendar-issues-form__actions {
+  display: flex;
+}
+.calendar-issues-form__delete-btn {
   margin-left: auto;
+  margin-right: 15px;
+  background-color: #ec4d4d;
+  color: white;
+  min-height: 40px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.calendar-issues-form__delete-btn:disabled {
+  background-color: #f5d2d2;
+}
+.calendar-issues-form__submit-btn {
   margin-right: 10px;
   background-color: #1a73e8;
   color: white;

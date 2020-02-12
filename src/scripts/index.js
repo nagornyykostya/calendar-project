@@ -39,6 +39,28 @@ const onTodayClick = () => {
 const todayBtn = document.querySelector('.header__today');
 todayBtn.addEventListener('click', onTodayClick);
 
+
+// Delete BTN 
+
+const deleteBtn = document.querySelector(".calendar-issues-form__delete-btn")
+const onDelete = () => {
+    const getIndexOfElement = remindersStorage.findIndex(element => element.id == initCalendar.id);
+    remindersStorage.splice(getIndexOfElement, 1);
+
+    title.value = null;
+    date.value = null;
+    startTime.value = null;
+    finishTime.value = null;
+    description.value = null;
+    deleteBtn.disabled = true;
+    popUp.setAttribute("style", "visibility: hidden;");
+    initCalendar.id = null;
+    initCalendar.editMode = false;
+    renderCalendar();
+}
+
+deleteBtn.addEventListener('click', onDelete)
+
 // Popup form
 const popUp = document.querySelector('.pop-up-form');
 const closePopUpBtn = document.querySelector('.pop-up-form__close-btn');
@@ -49,6 +71,10 @@ const onCloseBtn = () => {
     startTime.value = null;
     finishTime.value = null;
     description.value = null;
+    deleteBtn.disabled = true;
+    initCalendar.editMode = false;
+
+
 };
 closePopUpBtn.addEventListener('click', onCloseBtn);
 
@@ -88,7 +114,8 @@ const onSubmit = event => {
     startTime.value = null;
     finishTime.value = null;
     description.value = null;
-
+    initCalendar.id = null;
+    deleteBtn.disabled = true;
     popUp.setAttribute("style", "visibility: hidden;");
 
     console.log(remindersStorage);
@@ -108,12 +135,13 @@ const onCreateBtnClick = () => {
 };
 createBtn.addEventListener('click', onCreateBtnClick);
 
-// Event listener for calendar cells 
+// Edit calendar cells 
 
 const dayColumns = document.querySelector(".day-columns");
 
 const onCalendarClick = (event) => {
     console.log(event.toElement.id);
+    deleteBtn.disabled = false;
     let getObjectById = remindersStorage.find(item => item.id == event.toElement.id)
     title.value = getObjectById.title;
     date.value = getObjectById.date;
@@ -127,3 +155,4 @@ const onCalendarClick = (event) => {
 }
 
 dayColumns.addEventListener('click', onCalendarClick);
+
