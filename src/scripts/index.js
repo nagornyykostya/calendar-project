@@ -18,6 +18,8 @@ const description = document.getElementById("description");
 // getMonday //
 
 initCalendar.getMonday()
+console.log(new Date(initCalendar.selectedWeek))
+
 
 // navbar render 
 
@@ -59,6 +61,18 @@ todayBtn.addEventListener('click', onTodayClick);
 const createBtn = document.querySelector('.header__create');
 const onCreateBtnClick = () => {
     popUp.setAttribute("style", "visibility: visible;")
+    const dateNow2 = new Date();
+    date.value = `${dateNow2.getFullYear()}-${dateNow2.getMonth() < 10 ? `0${dateNow2.getMonth() + 1}`:`${dateNow2.getMonth() + 1}`}-${dateNow2.getDate() < 10 ? `0${dateNow2.getDate()}`:`${dateNow2.getDate()}`}`
+
+    title.value = null;
+    startTime.value = null;
+    finishTime.value = null;
+    description.value = null;
+    initCalendar.id = null;
+    deleteBtn.disabled = true;
+    initCalendar.editMode = false;
+    console.log(date.value);
+
 };
 createBtn.addEventListener('click', onCreateBtnClick);
 

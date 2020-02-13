@@ -11,7 +11,7 @@ export const initCalendar = {
         } else if (getDayOfWeek === 0) {
             this.selectedWeek = (new Date().getTime() - (6 * this.miliSecondsPerDay));
         } else {
-            this.selectedWeek = new Date().getTime() - ((getDayOfWeek - (getDayOfWeek - 1)) * this.miliSecondsPerDay);
+            this.selectedWeek = new Date().getTime() - ((getDayOfWeek - 1) * this.miliSecondsPerDay);
         }
     },
     switchWeek(direction) {
