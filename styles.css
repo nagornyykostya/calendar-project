@@ -153,6 +153,7 @@
 }
 .pop-up-form__close-btn {
   margin-left: auto;
+  margin-top: 8px;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -239,6 +240,7 @@
   padding-left: 10px;
   height: 60px;
   border-top: 1px solid grey;
+  cursor: pointer;
 }
 .day-column__hour-cell:first-child {
   border-top: none;
@@ -247,18 +249,28 @@
   position: absolute;
   top: 0px;
   font-size: 14px;
-  background-color: #a2c9fb;
+  background-color: #d7dbef;
+  padding: 2px 4px;
   border-radius: 4px;
   width: 150px;
-  padding: 1px;
   z-index: 1;
+  box-shadow: 0px 2px 27px -11px #bbb9b9;
   cursor: pointer;
 }
 .day-column__current-time-line {
   position: absolute;
-  background-color: red;
+  display: flex;
+  align-items: center;
+  background-color: #ea4335;
   width: 170px;
-  height: 5px;
+  height: 2px;
+  margin-top: -1px;
+}
+.day-column__current-time {
+  background: #ea4335;
+  border-radius: 10px;
+  font-size: 12px;
+  padding: 2px 4px;
 }
 
 .day-columns {
