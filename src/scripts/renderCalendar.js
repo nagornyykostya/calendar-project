@@ -17,7 +17,7 @@ export const renderCalendar = () => {
                 if (reminder != undefined) {
                     const duration = getDuration(reminder.finishTime, reminder.startTime);
                     const startMinutes = getMinutesStart(reminder.startTime);
-                    arrDayCells.push(`<div class="day-column__hour-cell" id="${i < 10 ? "0" + i : i}:00"><div class="day-column__reminder-item" style="min-height:${duration}px;top:${startMinutes}px;" id="${reminder.id}">${reminder.title}<br>${reminder.startTime} - ${reminder.finishTime}</div></div>`);
+                    arrDayCells.push(`<div class="day-column__hour-cell" id="${i < 10 ? "0" + i : i}:00"><div class="day-column__reminder-item" style="min-height:${duration}px;top:${startMinutes}px;background-color:${initCalendar.itemColor}" id="${reminder.id}">${reminder.title}<br>${reminder.startTime} - ${reminder.finishTime}</div></div>`);
                 } else {
                     arrDayCells.push(`<div class="day-column__hour-cell"  id="${i < 10 ? "0" + i : i}:00"></div>`);
                 }

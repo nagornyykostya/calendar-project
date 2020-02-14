@@ -5,7 +5,7 @@
   border-bottom: 0.5px solid grey;
   background-color: white;
   position: fixed;
-  z-index: 2;
+  z-index: 5;
   width: 100vw;
 
   &__create {
@@ -44,6 +44,40 @@
     white-space: nowrap;
     margin-left: 20px;
     color: #3c4043;
+  }
+
+  &__settings-actions {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  &__setting-btn {
+    background-color: white;
+    border: none;
+  }
+
+  &__settings-modal {
+    display: flex;
+    align-items: flex-start;
+    position: absolute;
+    top: 40px;
+    left: -170px;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: -1px 9px 18px -9px rgba(0, 0, 0, 0.68);
+  }
+
+  &__close-modal-btn {
+    margin-left: auto;
+    margin-top: 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
 }
 

@@ -1,10 +1,11 @@
 export const initCalendar = {
     monthes: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
     weekDays: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
-    miliSecondsPerDay: 1000 * 60 * 60 * 24,
+    miliSecondsPerDay: 86400000,
     selectedWeek: null,
     editMode: false,
     tempId: null,
+    itemColor: "",
     getMonday() {
         let getDayOfWeek = new Date().getDay();
         if (getDayOfWeek === 1) {
