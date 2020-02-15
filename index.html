@@ -35,14 +35,17 @@
             <button class="header__setting-btn">
                 <i class="large material-icons">settings</i>
             </button>
-            <div class="header__settings-modal">
-                <button class="header__close-modal-btn"><i class="large material-icons">close</i></button>
-                <div>
-                    <!-- <label for="">Color of reminders</label> -->
-                </div>
-
-            </div>
         </div>
+            <div class="header__settings-modal">
+                <button class="header__close-modal-btn" id="close-modal-btn"><i class="large material-icons">close</i></button>
+                <form class="header__settings-form">
+                    <div class="header__settings-configes">
+                        <label class="header__color-label" for="item-color">Base color:</label>
+                        <input class="header__color-input" type="color" id="base-color" name="base-color">
+                    </div>
+                    <button class="header__submit-btn" type="submit">Сохранить</button>
+                </form>
+            </div>
     </header>
 
 
@@ -57,16 +60,18 @@
             <div class="calendar-issues-form__date-block">
                 <i class="material-icons">access_time</i>
                 <input class="calendar-issues-form__date-input" type="date" id="date" name="date" required>
-                <input class="calendar-issues-form__start-time-input" type="time" id="startTime" name="start-time" step="900" required>
-                <input class="calendar-issues-form__finish-time-input" type="time" id="finishTime" name="finish-time" step="900" required>
+                <input class="calendar-issues-form__start-time-input" type="time" id="startTime" name="start-time"
+                    step="900" required>
+                <input class="calendar-issues-form__finish-time-input" type="time" id="finishTime" name="finish-time"
+                    step="900" required>
+                    <input class="calendar-issues-form__color-input" type="color" id="item-color" name="item-color">
             </div>
-            <textarea class="calendar-issues-form__description-input" name="description" id="description" cols="30" rows="10"
+            <textarea class="calendar-issues-form__description-input" name="description" id="description"
                 placeholder="Добавить описание"></textarea>
-                <div class="calendar-issues-form__actions">
-
-            <button class="calendar-issues-form__delete-btn" type="button" disabled>Удалить</button>
-            <button class="calendar-issues-form__submit-btn" type="submit">Сохранить</button>
-        </div>
+            <div class="calendar-issues-form__actions">
+                <button class="calendar-issues-form__delete-btn" type="button" disabled>Удалить</button>
+                <button class="calendar-issues-form__submit-btn" type="submit">Сохранить</button>
+            </div>
         </form>
     </div>
 

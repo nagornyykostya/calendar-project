@@ -17,7 +17,7 @@ export const renderCalendar = () => {
                 if (reminder != undefined) {
                     const duration = getDuration(reminder.finishTime, reminder.startTime);
                     const startMinutes = getMinutesStart(reminder.startTime);
-                    arrDayCells.push(`<div class="day-column__hour-cell" id="${i < 10 ? "0" + i : i}:00"><div class="day-column__reminder-item" style="min-height:${duration}px;top:${startMinutes}px;background-color:${initCalendar.itemColor}" id="${reminder.id}">${reminder.title}<br>${reminder.startTime} - ${reminder.finishTime}</div></div>`);
+                    arrDayCells.push(`<div class="day-column__hour-cell" id="${i < 10 ? "0" + i : i}:00"><div class="day-column__reminder-item" style="min-height:${duration}px;top:${startMinutes}px;background-color:${reminder.itemColor}" id="${reminder.id}">${reminder.title}<br>${reminder.startTime} - ${reminder.finishTime}</div></div>`);
                 } else {
                     arrDayCells.push(`<div class="day-column__hour-cell"  id="${i < 10 ? "0" + i : i}:00"></div>`);
                 }
@@ -44,8 +44,12 @@ const renderCurrentTimeLine = () => {
     currentDate.appendChild(currentTimeLine);
     const currentMinute = new Date().getHours() * 60 + new Date().getMinutes();
     currentTimeLine.style.top = `${currentMinute}px`;
+    // currentTimeLine.scrollIntoView({block: "center", behavior: "smooth"});
+
     }
 }
+
+
 
 const getDuration = (finishTime, startTime) => {
     let getDate = (string) => new Date(0, 0,0, string.split(':')[0], string.split(':')[1]);
@@ -58,3 +62,5 @@ const getDuration = (finishTime, startTime) => {
 const getMinutesStart = (startTime) => {
    return startTime.split(':')[1];
 }
+
+

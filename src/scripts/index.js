@@ -6,7 +6,7 @@ import { changeWeek } from './weekSelector.js';
 import { renderCalendar } from './renderCalendar.js';
 import { renderSideBar } from './renderSideBar.js';
 import { renderHeaderText } from './renderHeader.js';
-
+import { initSettingsModalListeners } from './settingsModal.js';
 
 
 const popUp = document.querySelector('.pop-up-form');
@@ -16,6 +16,7 @@ const date = document.getElementById("date");
 const startTime = document.getElementById("startTime");
 const finishTime = document.getElementById("finishTime");
 const description = document.getElementById("description");
+const colorItemInput = document.getElementById("item-color");
 
 // getMonday //
 initCalendar.getMonday()
@@ -64,6 +65,7 @@ const onCreateBtnClick = () => {
     startTime.value = null;
     finishTime.value = null;
     description.value = null;
+    colorItemInput.value = initCalendar.itemColor;
     initCalendar.id = null;
     deleteBtn.disabled = true;
     initCalendar.editMode = false;
@@ -81,6 +83,7 @@ const onCalendarClick = (event) => {
         startTime.value = getObjectById.startTime;
         finishTime.value = getObjectById.finishTime;
         description.value = getObjectById.description;
+        colorItemInput.value = getObjectById.itemColor;
         initCalendar.editMode = true;
         initCalendar.id = event.toElement.id;
         popUp.setAttribute("style", "visibility: visible;")
@@ -101,3 +104,14 @@ const onCalendarClick = (event) => {
 }
 
 dayColumns.addEventListener('click', onCalendarClick);
+
+// settings modal
+initSettingsModalListeners();
+
+// Scroll to current time 
+const currentTimeLine = document.querySelector('.day-column__current-time-line');
+
+export const scrollToCurrentTimeLine = () => {
+    currentTimeLine.scrollIntoView({block: "center", behavior: "smooth"});
+}
+scrollToCurrentTimeLine();

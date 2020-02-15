@@ -5,7 +5,7 @@ export const initCalendar = {
     selectedWeek: null,
     editMode: false,
     tempId: null,
-    itemColor: "",
+    itemColor: "#d7dbef",
     getMonday() {
         let getDayOfWeek = new Date().getDay();
         if (getDayOfWeek === 1) {
@@ -32,6 +32,7 @@ export const remindersStorage = [
         startTime: "",
         finishTime: "",
         description: "",
+        itemColor: "#ea4335",
         id: Math.random(),
     },
     {
@@ -40,6 +41,7 @@ export const remindersStorage = [
         startTime: "",
         finishTime: "",
         description: "sadsaddsa",
+        itemColor: "#ea3335",
         id: 0.12112313
     },
     {
@@ -48,6 +50,7 @@ export const remindersStorage = [
         startTime: "00:45",
         finishTime: "01:15",
         description: "dsasddsa",
+        itemColor: "#ea4225",
         id: 0.3918664045401694
     },
     {
@@ -56,6 +59,7 @@ export const remindersStorage = [
         startTime: "00:15",
         finishTime: "01:45",
         description: "sadsaddsa",
+        itemColor: "#ea1231",
         id: 0.1689814212133232
     },
     {
@@ -64,6 +68,7 @@ export const remindersStorage = [
         startTime: "13:45",
         finishTime: "15:45",
         description: "dsasddsa",
+        itemColor: "#eq1231",
         id: 0.32131324213
     },
     {
@@ -72,6 +77,7 @@ export const remindersStorage = [
         startTime: "12:30",
         finishTime: "13:15",
         description: "dsasddsa",
+        itemColor: "",
         id: 0.3247123123
     },
     {
@@ -80,6 +86,7 @@ export const remindersStorage = [
         startTime: "00:45",
         finishTime: "01:30",
         description: "sadsaddsa",
+        itemColor: "",
         id: 0.123123454312312
     }
 ]

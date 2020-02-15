@@ -6,6 +6,7 @@ import { renderCalendar } from './renderCalendar.js';
 // reset Pop Up form
 const popUp = document.querySelector('.pop-up-form');
 const deleteBtn = document.querySelector(".calendar-issues-form__delete-btn")
+const colorItemInput = document.getElementById("item-color");
 
 const resetPopUpForm = () => {
     title.value = null;
@@ -16,6 +17,7 @@ const resetPopUpForm = () => {
     initCalendar.id = null;
     deleteBtn.disabled = true;
     initCalendar.editMode = false;
+    colorItemInput.value = initCalendar.itemColor;
     popUp.setAttribute("style", "visibility: hidden;");
 }
 
@@ -47,6 +49,8 @@ const onSubmit = event => {
         getEditObject.startTime = startTime.value;
         getEditObject.finishTime = finishTime.value;
         getEditObject.description = description.value;
+        getEditObject.itemColor = colorItemInput.value;
+
     } else {
 
         remindersStorage.push({
@@ -55,6 +59,7 @@ const onSubmit = event => {
             startTime: startTime.value,
             finishTime: finishTime.value,
             description: description.value,
+            itemColor: colorItemInput.value,
             id: Math.random()
         });
     }
