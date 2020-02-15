@@ -1,6 +1,6 @@
-// Getting the reminders for calendar;
 import { remindersStorage } from './storage.js';
 
+// Getting the reminders for calendar;
 export const getRemindersArrFilterByWeek = (currentMonday) => {
     let result = remindersStorage.filter(item => new Date(item.date).getMonth() === new Date(currentMonday).getMonth() &&
         new Date(item.date).getFullYear() == new Date(currentMonday).getFullYear() &&
@@ -10,12 +10,12 @@ export const getRemindersArrFilterByWeek = (currentMonday) => {
     } else {
         return false;
     }
-        // .sort((a, b) => new Date(a.date) - new Date(b.date));
 }
 
 export const getRemindersObjByHourStart = (arr, hours) => {
     return arr.find(item => {
-        return item.startTime.split(":")[0] === (hours < 10 ? `0${hours}`:`${hours}`)});
+        return item.startTime.split(":")[0] === (hours < 10 ? `0${hours}` : `${hours}`)
+    });
 }
 // < 10 ? `0${hours}`: `${hours}`
 // // Geting the right class for elements 

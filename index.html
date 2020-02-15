@@ -17,30 +17,30 @@
     <!-- head -->
 
     <header class="header">
-        <button class="header__create">
+        <button class="header__create" title="Create new reminder">
             <i class="large material-icons header__create_icon">add</i>
             Создать
         </button>
-        <button class="header__today">Сегодня</button>
+        <button class="header__today" title="Go to today">Сегодня</button>
         <div class="weeks-selectors-block">
-            <button class="weeks-selectors-block__previous-week" data-direction="false">
+            <button class="weeks-selectors-block__previous-week" title="Previous week" data-direction="false">
                 <i class="large material-icons">chevron_left</i>
             </button>
-            <button class="weeks-selectors-block__next-week" data-direction="true">
+            <button class="weeks-selectors-block__next-week" title="Next week" data-direction="true">
                 <i class="large material-icons">chevron_right</i>
             </button>
         </div>
         <span class="header__selected-period"></span>
         <div class="header__settings-actions">
-            <button class="header__setting-btn">
+            <button class="header__setting-btn" title="Settings">
                 <i class="large material-icons">settings</i>
             </button>
         </div>
             <div class="header__settings-modal">
-                <button class="header__close-modal-btn" id="close-modal-btn"><i class="large material-icons">close</i></button>
+                <button class="header__close-modal-btn" id="close-modal-btn" title="Close"><i class="large material-icons">close</i></button>
                 <form class="header__settings-form">
                     <div class="header__settings-configes">
-                        <label class="header__color-label" for="item-color">Base color:</label>
+                        <label class="header__color-label" for="item-color">Default color:</label>
                         <input class="header__color-input" type="color" id="base-color" name="base-color">
                     </div>
                     <button class="header__submit-btn" type="submit">Сохранить</button>
@@ -53,7 +53,7 @@
 
 
     <div class="pop-up-form">
-        <button class="pop-up-form__close-btn"><i class="large material-icons">close</i></button>
+        <button class="pop-up-form__close-btn"><i class="large material-icons" title="Close">close</i></button>
         <form class="calendar-issues-form">
             <input class="calendar-issues-form__title-input" type="text" id="title" name="issue-title"
                 placeholder="Reminder title" required>
@@ -69,8 +69,8 @@
             <textarea class="calendar-issues-form__description-input" name="description" id="description"
                 placeholder="Добавить описание"></textarea>
             <div class="calendar-issues-form__actions">
-                <button class="calendar-issues-form__delete-btn" type="button" disabled>Удалить</button>
-                <button class="calendar-issues-form__submit-btn" type="submit">Сохранить</button>
+                <button class="calendar-issues-form__delete-btn" type="button" disabled title="Delete">Удалить</button>
+                <button class="calendar-issues-form__submit-btn" type="submit" title="Save">Сохранить</button>
             </div>
         </form>
     </div>

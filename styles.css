@@ -301,7 +301,7 @@
   border: none;
 }
 .calendar-issues-form__date-input {
-  width: 125px;
+  width: 140px;
 }
 .calendar-issues-form__date-input, .calendar-issues-form__start-time-input, .calendar-issues-form__finish-time-input {
   border: none;
@@ -403,6 +403,7 @@
 .day-column__reminder-item:hover {
   box-shadow: 0px 0px 15px -2px #7a7a7a;
   transition: box-shadow 0.3s ease-in-out;
+  z-index: 2;
 }
 .day-column__current-time-line {
   position: absolute;

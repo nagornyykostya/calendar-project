@@ -18,5 +18,4 @@ export const renderNavbar = () => {
   }
 
   navBar.innerHTML = arrNavBarElements.join('')
-  // console.log(new Date(initCalendar.selectedWeek))
-  }
+}
