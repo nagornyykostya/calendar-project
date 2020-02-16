@@ -11,35 +11,6 @@ const finishTime = document.getElementById("finishTime");
 const description = document.getElementById("description");
 const colorItemInput = document.getElementById("item-color");
 
-// export const renderCalendar = () => {
-
-//     let arrDayColumns = [];
-
-//     for (let i = 0; i < 7; i++) {
-//         let datesPerWeek = initCalendar.selectedWeek + (i * initCalendar.miliSecondsPerDay);
-//         let arrDayCells = [];
-//         let remindersPerDay = getRemindersArrFilterByWeek(datesPerWeek);
-//         for (let i = 0; i < 24; i++) {
-//             if (remindersPerDay) {
-//                 const reminder = getRemindersObjByHourStart(remindersPerDay, i);
-//                 if (reminder != undefined) {
-//                     const duration = getDuration(reminder.finishTime, reminder.startTime);
-//                     const startMinutes = getMinutesStart(reminder.startTime);
-//                     arrDayCells.push(`<div class="day-column__hour-cell" id="${i < 10 ? "0" + i : i}:00"><div class="day-column__reminder-item" style="min-height:${duration}px;top:${startMinutes}px;background-color:${reminder.itemColor}" id="${reminder.id}">${reminder.title}<br>${reminder.startTime} - ${reminder.finishTime}</div></div>`);
-//                 } else {
-//                     arrDayCells.push(`<div class="day-column__hour-cell"  id="${i < 10 ? "0" + i : i}:00"></div>`);
-//                 }
-//             } else {
-//                 arrDayCells.push(`<div class="day-column__hour-cell" id="${i < 10 ? "0" + i : i}:00"></div>`);
-//             }
-//         }
-//         let columnCellsElements = arrDayCells.join('');
-
-//         arrDayColumns.push(` <div class="day-column" data-date="${datesPerWeek}">${columnCellsElements}</div>`)
-//     }
-//     dayColumns.innerHTML = arrDayColumns.join('');
-//     renderCurrentTimeLine();
-// }
 export const renderCalendar = () => {
 
     let arrDayColumns = [];
@@ -53,23 +24,21 @@ export const renderCalendar = () => {
                 let reminder = getRemindersObjByHourStart(remindersPerDay, i);
                 if (reminder.length >= 1) {
                     let arrReminders = [];
-                        for (let z = 0; z < reminder.length; z++){
-                            console.log(reminder)
-                            console.log(reminder[z]);
-                            let duration = getDuration(reminder[z].finishTime, reminder[z].startTime);
-                            const startMinutes = getMinutesStart(reminder[z].startTime);
-                            arrReminders.push(`<div class="day-column__reminder-item" style="min-height:${duration}px;
-                            top:${+startMinutes+(z*5)}px;
-                            left:${z > 0 ? (z * 2) * 10: z}px;
-                            z-index:${z + 1};
+                    for (let z = 0; z < reminder.length; z++) {
+                        let duration = getDuration(reminder[z].finishTime, reminder[z].startTime);
+                        const startMinutes = getMinutesStart(reminder[z].startTime);
+                        arrReminders.push(`<div class="day-column__reminder-item"  style="min-height:${duration}px;
+                            top:${+startMinutes + 5 + (z * 5)}px;
+                            left:${z > 0 ? (z * 2) * 10 : z + 4}px;
+                           
                             background-color:${reminder[z].itemColor}" 
-                            id="${reminder[z].id}"><span class="day-column__reminder-item-number">#${z+1}</span> ${reminder[z].title}
+                            id="${reminder[z].id}"><span class="day-column__reminder-item-number">#${z + 1}</span> ${reminder[z].title}
                             <br><i class="large material-icons day-column__reminder-item-number">access_time</i> ${reminder[z].startTime} - ${reminder[z].finishTime}</div>`);
-                            // z + 1 % 2 == 0 ? (z * 2) * 20: z
-                        }
-                        arrDayCells.push(`<div class="day-column__hour-cell" id="${i < 10 ? "0" + i : i}:00">${arrReminders.join('')}</div>`);
+                        // z + 1 % 2 == 0 ? (z * 2) * 20: z
+                    }
+                    arrDayCells.push(`<div class="day-column__hour-cell" id="${i < 10 ? "0" + i : i}:00">${arrReminders.join('')}</div>`);
 
-                    } else {
+                } else {
                     arrDayCells.push(`<div class="day-column__hour-cell"  id="${i < 10 ? "0" + i : i}:00"></div>`);
                 }
             } else {
@@ -146,4 +115,5 @@ const onCalendarClick = (event) => {
 
 export const initCalendarEditListeners = () => {
     dayColumns.addEventListener('click', onCalendarClick);
+
 }

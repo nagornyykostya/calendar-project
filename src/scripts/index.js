@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentTimeLine = document.querySelector('.day-column__current-time-line');
         currentTimeLine.scrollIntoView({ block: "center", behavior: "smooth" });
     })()
-    
+
 })
 
 const onStorageChange = (e) => {
