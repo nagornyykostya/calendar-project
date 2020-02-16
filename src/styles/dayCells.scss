@@ -60,6 +60,14 @@
       color: black;
       font-weight: bold;
   }
+
+  &__reminder-item-title {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 120px;
+  }
   &__current-time-line {
     position: absolute;
     display: flex;

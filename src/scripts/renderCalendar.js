@@ -30,9 +30,8 @@ export const renderCalendar = () => {
                         arrReminders.push(`<div class="day-column__reminder-item"  style="min-height:${duration}px;
                             top:${+startMinutes + 5 + (z * 5)}px;
                             left:${z > 0 ? (z * 2) * 10 : z + 4}px;
-                           
                             background-color:${reminder[z].itemColor}" 
-                            id="${reminder[z].id}"><span class="day-column__reminder-item-number">#${z + 1}</span> ${reminder[z].title}
+                            id="${reminder[z].id}"><span class="day-column__reminder-item-title"><span class="day-column__reminder-item-number">#${z + 1}</span> ${reminder[z].title}</span>
                             <br><i class="large material-icons day-column__reminder-item-number">access_time</i> ${reminder[z].startTime} - ${reminder[z].finishTime}</div>`);
                         // z + 1 % 2 == 0 ? (z * 2) * 20: z
                     }

@@ -414,6 +414,13 @@
   color: black;
   font-weight: bold;
 }
+.day-column__reminder-item-title {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 120px;
+}
 .day-column__current-time-line {
   position: absolute;
   display: flex;
