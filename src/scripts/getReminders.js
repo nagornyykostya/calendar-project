@@ -12,8 +12,14 @@ export const getRemindersArrFilterByWeek = (currentMonday) => {
     }
 }
 
+// export const getRemindersObjByHourStart = (arr, hours) => {
+//     return arr.find(item => {
+//         return item.startTime.split(":")[0] === (hours < 10 ? `0${hours}` : `${hours}`)
+//     });
+// }
+
 export const getRemindersObjByHourStart = (arr, hours) => {
-    return arr.find(item => {
-        return item.startTime.split(":")[0] === (hours < 10 ? `0${hours}` : `${hours}`)
+    return arr.filter(item => {
+        return item.startTime.split(":")[0] == (hours < 10 ? `0${hours}` : `${hours}`)
     });
 }
