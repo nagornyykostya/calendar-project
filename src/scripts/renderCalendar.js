@@ -84,7 +84,7 @@ const getMinutesStart = (startTime) => {
 
 // Edit calendar cells 
 const onCalendarClick = (event) => {
-    if (event.target.innerText) {
+    if (event.target.className == "day-column__reminder-item") {
         deleteBtn.disabled = false;
         let getObjectById = remindersStorage.find(item => item.id == event.toElement.id);
         title.value = getObjectById.title;
@@ -97,7 +97,7 @@ const onCalendarClick = (event) => {
         initCalendar.id = event.toElement.id;
         popUp.setAttribute("style", "visibility: visible;");
         setStorage();
-    } else {
+    } else if (event.target.className == "day-column__hour-cell") {
         startTime.value = event.target.id;
         finishTime.value = event.target.id.slice(0, 2) + `:15`;
 
