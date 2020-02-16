@@ -33,7 +33,6 @@ export const renderCalendar = () => {
                             background-color:${reminder[z].itemColor}" 
                             id="${reminder[z].id}"><span class="day-column__reminder-item-title"><span class="day-column__reminder-item-number">#${z + 1}</span> ${reminder[z].title}</span>
                             <br><i class="large material-icons day-column__reminder-item-number">access_time</i> ${reminder[z].startTime} - ${reminder[z].finishTime}</div>`);
-                        // z + 1 % 2 == 0 ? (z * 2) * 20: z
                     }
                     arrDayCells.push(`<div class="day-column__hour-cell" id="${i < 10 ? "0" + i : i}:00">${arrReminders.join('')}</div>`);
 
