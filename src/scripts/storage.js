@@ -1,4 +1,4 @@
-export const initCalendar = {
+export let initCalendar = {
     monthes: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
     weekDays: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
     miliSecondsPerDay: 86400000,
@@ -25,68 +25,20 @@ export const initCalendar = {
     }
 }
 
-export const remindersStorage = [
-    {
-        title: "",
-        date: "",
-        startTime: "",
-        finishTime: "",
-        description: "",
-        itemColor: "#ea4335",
-        id: Math.random(),
-    },
-    {
-        title: "Do lesson",
-        date: "2020-04-12",
-        startTime: "",
-        finishTime: "",
-        description: "sadsaddsa",
-        itemColor: "#ea3335",
-        id: 0.12112313
-    },
-    {
-        title: "Buy products",
-        date: "2020-02-11",
-        startTime: "00:45",
-        finishTime: "01:15",
-        description: "dsasddsa",
-        itemColor: "#ea4225",
-        id: 0.3918664045401694
-    },
-    {
-        title: "Training",
-        date: "2020-02-10",
-        startTime: "00:15",
-        finishTime: "01:45",
-        description: "sadsaddsa",
-        itemColor: "#ea1231",
-        id: 0.1689814212133232
-    },
-    {
-        title: "Shopping",
-        date: "2020-02-13",
-        startTime: "13:45",
-        finishTime: "15:45",
-        description: "dsasddsa",
-        itemColor: "#eq1231",
-        id: 0.32131324213
-    },
-    {
-        title: "ddddddd",
-        date: "2020-02-15",
-        startTime: "12:30",
-        finishTime: "13:15",
-        description: "dsasddsa",
-        itemColor: "",
-        id: 0.3247123123
-    },
-    {
-        title: "adsdd",
-        date: "2020-03-11",
-        startTime: "00:45",
-        finishTime: "01:30",
-        description: "sadsaddsa",
-        itemColor: "",
-        id: 0.123123454312312
+export let remindersStorage = [];
+
+export const getStorage = () => {
+    let itemColor = localStorage.getItem("itemColor");
+    if (itemColor) {
+        initCalendar.itemColor = JSON.parse(itemColor);
     }
-]
+    let newArr = localStorage.getItem("remindersStorage");
+    if (newArr) {
+        remindersStorage = JSON.parse(newArr);
+    }
+};
+
+export const setStorage = () => {
+    localStorage.setItem("itemColor", JSON.stringify(`${initCalendar.itemColor}`));
+    localStorage.setItem("remindersStorage", JSON.stringify(remindersStorage));
+};

@@ -1,4 +1,4 @@
-import { initCalendar, remindersStorage } from './storage.js';
+import { initCalendar, remindersStorage, getStorage, setStorage } from './storage.js';
 import { getRemindersArrFilterByWeek, getRemindersObjByHourStart } from './getReminders.js';
 
 const dayColumns = document.querySelector(".day-columns");
@@ -73,7 +73,7 @@ const getMinutesStart = (startTime) => {
 const onCalendarClick = (event) => {
     if (event.target.innerText) {
         deleteBtn.disabled = false;
-        let getObjectById = remindersStorage.find(item => item.id == event.toElement.id)
+        let getObjectById = remindersStorage.find(item => item.id == event.toElement.id);
         title.value = getObjectById.title;
         date.value = getObjectById.date;
         startTime.value = getObjectById.startTime;
@@ -82,7 +82,8 @@ const onCalendarClick = (event) => {
         colorItemInput.value = getObjectById.itemColor;
         initCalendar.editMode = true;
         initCalendar.id = event.toElement.id;
-        popUp.setAttribute("style", "visibility: visible;")
+        popUp.setAttribute("style", "visibility: visible;");
+        setStorage();
     } else {
         startTime.value = event.target.id;
         finishTime.value = event.target.id.slice(0, 2) + `:15`;
@@ -94,7 +95,8 @@ const onCalendarClick = (event) => {
             `${dateOfCell.getMonth() + 1}`}-${dateOfCell.getDate() < 10 ?
                 `0${dateOfCell.getDate()}` : `${dateOfCell.getDate()}`}`
         colorItemInput.value = initCalendar.itemColor;
-        popUp.setAttribute("style", "visibility: visible;")
+        popUp.setAttribute("style", "visibility: visible;");
+        setStorage();
     }
 }
 

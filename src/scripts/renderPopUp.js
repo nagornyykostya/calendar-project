@@ -1,4 +1,4 @@
-import { initCalendar } from './storage.js';
+import { initCalendar, setStorage } from './storage.js';
 import { remindersStorage } from './storage.js';
 import { renderCalendar } from './renderCalendar.js';
 
@@ -19,6 +19,7 @@ const resetPopUpForm = () => {
     initCalendar.editMode = false;
     colorItemInput.value = initCalendar.itemColor;
     popUp.setAttribute("style", "visibility: hidden;");
+    setStorage();
 }
 
 export const renderPopUpForm = () => {
@@ -29,6 +30,7 @@ export const renderPopUpForm = () => {
         remindersStorage.splice(getIndexOfElement, 1);
         resetPopUpForm();
         renderCalendar();
+        setStorage();
     }
     deleteBtn.addEventListener('click', onDelete)
 
@@ -64,6 +66,7 @@ export const renderPopUpForm = () => {
         }
         renderCalendar();
         resetPopUpForm()
+        setStorage();
     }
     popUpForm.addEventListener("submit", onSubmit)
 }

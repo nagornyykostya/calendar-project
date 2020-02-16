@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="styles.css">
     <title>Calendar</title>
 </head>
-
 <body>
 
     <!-- head -->
@@ -36,21 +35,20 @@
                 <i class="large material-icons">settings</i>
             </button>
         </div>
-            <div class="header__settings-modal">
-                <button class="header__close-modal-btn" id="close-modal-btn" title="Close"><i class="large material-icons">close</i></button>
-                <form class="header__settings-form">
-                    <div class="header__settings-configes">
-                        <label class="header__color-label" for="item-color">Default color:</label>
-                        <input class="header__color-input" type="color" id="base-color" name="base-color">
-                    </div>
-                    <button class="header__submit-btn" type="submit">Сохранить</button>
-                </form>
-            </div>
+        <div class="header__settings-modal">
+            <button class="header__close-modal-btn" id="close-modal-btn" title="Close"><i
+                    class="large material-icons">close</i></button>
+            <form class="header__settings-form">
+                <div class="header__settings-configes">
+                    <label class="header__color-label" for="item-color">Default color:</label>
+                    <input class="header__color-input" type="color" id="base-color" name="base-color">
+                </div>
+                <button class="header__submit-btn" type="submit">Сохранить</button>
+            </form>
+        </div>
     </header>
 
-
     <!-- popup form -->
-
 
     <div class="pop-up-form">
         <button class="pop-up-form__close-btn"><i class="large material-icons" title="Close">close</i></button>
@@ -64,7 +62,7 @@
                     step="900" required>
                 <input class="calendar-issues-form__finish-time-input" type="time" id="finishTime" name="finish-time"
                     step="900" required>
-                    <input class="calendar-issues-form__color-input" type="color" id="item-color" name="item-color">
+                <input class="calendar-issues-form__color-input" type="color" id="item-color" name="item-color">
             </div>
             <textarea class="calendar-issues-form__description-input" name="description" id="description"
                 placeholder="Добавить описание"></textarea>
@@ -74,7 +72,6 @@
             </div>
         </form>
     </div>
-
 
     <!-- navigation -->
 
@@ -87,9 +84,7 @@
             </div>
         </nav>
 
-
         <!-- day cells  -->
-
 
         <section class="day-cells">
             <div class="hours-column">

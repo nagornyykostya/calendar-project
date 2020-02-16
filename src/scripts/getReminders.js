@@ -17,14 +17,3 @@ export const getRemindersObjByHourStart = (arr, hours) => {
         return item.startTime.split(":")[0] === (hours < 10 ? `0${hours}` : `${hours}`)
     });
 }
-// < 10 ? `0${hours}`: `${hours}`
-// // Geting the right class for elements 
-// if (getRemindersObjByHourStart(("00").startTime.split(":")[1] == "00")) {
-//     // add class;
-// } else if (getRemindersObjByHourStart(("00").startTime.split(":")[1] == "15")) {
-//     // add class;
-// } else if (getRemindersObjByHourStart(("00").startTime.split(":")[1] == "30")) {
-//     // add class;
-// } else if (getRemindersObjByHourStart(("00").startTime.split(":")[1] == "45")) {
-//     // add class;
-// } 

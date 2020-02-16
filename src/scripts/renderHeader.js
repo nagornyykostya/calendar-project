@@ -1,5 +1,7 @@
-import { initCalendar } from './storage.js';
+import { initCalendar, setStorage } from './storage.js';
 import { changeWeek } from './weekSelector.js';
+import { renderNavbar } from './renderNavbar.js';
+import { renderCalendar } from './renderCalendar.js';
 
 const popUp = document.querySelector('.pop-up-form');
 const deleteBtn = document.querySelector(".calendar-issues-form__delete-btn")
@@ -33,10 +35,11 @@ const previousWeek = document.querySelector(".weeks-selectors-block__previous-we
 const nextWeek = document.querySelector(".weeks-selectors-block__next-week");
 
 const onTodayClick = () => {
-    initCalendar.getMonday()
+    initCalendar.getMonday();
     renderNavbar();
     renderCalendar();
     renderHeaderText();
+    setStorage();
 }
 
 const todayBtn = document.querySelector('.header__today');
@@ -56,6 +59,7 @@ const onCreateBtnClick = () => {
     initCalendar.id = null;
     deleteBtn.disabled = true;
     initCalendar.editMode = false;
+    setStorage();
 };
 
 export const initHeaderEventListeners = () => {

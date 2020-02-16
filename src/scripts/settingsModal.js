@@ -1,4 +1,4 @@
-import { initCalendar } from './storage.js';
+import { initCalendar, setStorage } from './storage.js';
 
 const colorBaseInput = document.getElementById("base-color");
 const settingsModal = document.querySelector('.header__settings-modal');
@@ -9,8 +9,8 @@ const saveSettingsBtn = document.querySelector('.header__submit-btn');
 const onSettingsClick = (e) => {
     settingsModal.setAttribute("style", "visibility: visible;");
     colorBaseInput.value = initCalendar.itemColor;
+    setStorage()
 }
-
 
 const onCloseModalBtn = (e) => {
     if (e.target.id = "close-modal-btn") {
@@ -22,6 +22,7 @@ const onSaveSettingsClick = (e) => {
     e.preventDefault();
     initCalendar.itemColor = colorBaseInput.value;
     settingsModal.setAttribute("style", "visibility: hidden;");
+    setStorage();
 }
 
 export const initSettingsModalListeners = () => {
