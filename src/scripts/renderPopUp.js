@@ -1,4 +1,5 @@
-import { initCalendar, setStorage } from './storage.js';
+import { initCalendar } from './inititalCalendarData.js';
+import { setStorage } from './storage.js';
 import { remindersStorage } from './storage.js';
 import { renderCalendar } from './renderCalendar.js';
 

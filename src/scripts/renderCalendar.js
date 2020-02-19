@@ -1,6 +1,8 @@
-import { initCalendar, remindersStorage, getStorage, setStorage } from './storage.js';
+import { initCalendar } from './inititalCalendarData.js';
+import { remindersStorage, setStorage } from './storage.js';
 import { getRemindersArrFilterByWeek, getRemindersObjByHourStart } from './getReminders.js';
 
+const miliSecondsPerDay = 86400000;
 const dayColumns = document.querySelector(".day-columns");
 const popUp = document.querySelector('.pop-up-form');
 const deleteBtn = document.querySelector(".calendar-issues-form__delete-btn")
@@ -16,7 +18,7 @@ export const renderCalendar = () => {
     let arrDayColumns = [];
 
     for (let i = 0; i < 7; i++) {
-        let datesPerWeek = initCalendar.selectedWeek + (i * initCalendar.miliSecondsPerDay);
+        let datesPerWeek = initCalendar.selectedWeek + (i * miliSecondsPerDay);
         let arrDayCells = [];
         let remindersPerDay = getRemindersArrFilterByWeek(datesPerWeek);
         for (let i = 0; i < 24; i++) {

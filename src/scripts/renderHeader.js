@@ -1,8 +1,11 @@
-import { initCalendar, setStorage } from './storage.js';
+import { initCalendar } from './inititalCalendarData.js';
+import { setStorage } from './storage.js';
 import { changeWeek } from './weekSelector.js';
 import { renderNavbar } from './renderNavbar.js';
 import { renderCalendar } from './renderCalendar.js';
 
+const miliSecondsPerDay = 86400000;
+const monthes = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
 const popUp = document.querySelector('.pop-up-form');
 const deleteBtn = document.querySelector(".calendar-issues-form__delete-btn")
 const title = document.getElementById("title");
@@ -16,14 +19,14 @@ export const renderHeaderText = () => {
     const headerSelectedPeriod = document.querySelector(".header__selected-period");
     const currentMonday = new Date(initCalendar.selectedWeek);
     let checkDay = initCalendar.selectedWeek;
-    let period = `${initCalendar.monthes[currentMonday.getMonth()]} ${currentMonday.getFullYear()}`
+    let period = `${monthes[currentMonday.getMonth()]} ${currentMonday.getFullYear()}`
     for (let i = 0; i < 6; i++) {
-        checkDay += initCalendar.miliSecondsPerDay;
+        checkDay += miliSecondsPerDay;
         if (new Date(checkDay).getMonth() != currentMonday.getMonth()) {
             if (new Date(checkDay).getFullYear() != currentMonday.getFullYear()) {
-                period = `${initCalendar.monthes[currentMonday.getMonth()]} ${currentMonday.getFullYear()} - ${initCalendar.monthes[new Date(checkDay).getMonth()]} ${new Date(checkDay).getFullYear()}`;
+                period = `${monthes[currentMonday.getMonth()]} ${currentMonday.getFullYear()} - ${monthes[new Date(checkDay).getMonth()]} ${new Date(checkDay).getFullYear()}`;
             } else {
-                period = `${initCalendar.monthes[currentMonday.getMonth()]} - ${initCalendar.monthes[new Date(checkDay).getMonth()]} ${currentMonday.getFullYear()}`;
+                period = `${monthes[currentMonday.getMonth()]} - ${monthes[new Date(checkDay).getMonth()]} ${currentMonday.getFullYear()}`;
             }
         }
     }

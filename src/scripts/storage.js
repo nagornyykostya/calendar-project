@@ -1,29 +1,4 @@
-export let initCalendar = {
-    monthes: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-    weekDays: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
-    miliSecondsPerDay: 86400000,
-    selectedWeek: null,
-    editMode: false,
-    tempId: null,
-    itemColor: "#d7dbef",
-    getMonday() {
-        let getDayOfWeek = new Date().getDay();
-        if (getDayOfWeek === 1) {
-            this.selectedWeek = new Date().getTime();
-        } else if (getDayOfWeek === 0) {
-            this.selectedWeek = (new Date().getTime() - (6 * this.miliSecondsPerDay));
-        } else {
-            this.selectedWeek = new Date().getTime() - ((getDayOfWeek - 1) * this.miliSecondsPerDay);
-        }
-    },
-    switchWeek(direction) {
-        if (direction) {
-            this.selectedWeek += 7 * this.miliSecondsPerDay;
-        } else {
-            this.selectedWeek -= 7 * this.miliSecondsPerDay;
-        }
-    }
-}
+import { initCalendar } from './inititalCalendarData.js';
 
 export let remindersStorage = [];
 

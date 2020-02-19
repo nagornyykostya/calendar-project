@@ -1,4 +1,5 @@
-import { initCalendar, getStorage } from './storage.js';
+import { initCalendar } from './inititalCalendarData.js';
+import { getStorage } from './storage.js';
 import { renderPopUpForm } from './renderPopUp.js';
 import { renderNavbar } from './renderNavbar.js';
 import { renderCalendar, initCalendarEditListeners } from './renderCalendar.js';

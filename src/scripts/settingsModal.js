@@ -1,4 +1,5 @@
-import { initCalendar, setStorage } from './storage.js';
+import { initCalendar } from './inititalCalendarData.js';
+import { setStorage } from './storage.js';
 
 const colorBaseInput = document.getElementById("base-color");
 const settingsModal = document.querySelector('.header__settings-modal');
