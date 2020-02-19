@@ -398,6 +398,11 @@
   flex-direction: row;
   justify-content: flex-start;
 }
+@media screen and (max-width: 699px) {
+  .day-cells {
+    padding: 0 10px;
+  }
+}
 
 .day-column {
   display: flex;
@@ -432,7 +437,7 @@
   background-color: #d7dbef;
   padding: 2px 4px;
   border-radius: 4px;
-  width: 150px;
+  width: 10vw;
   z-index: 1;
   box-shadow: 0px 2px 27px -11px #bbb9b9;
   border: 1px solid #b7b7b7;
@@ -472,14 +477,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 120px;
+  width: 8vw;
 }
 .day-column__current-time-line {
   position: absolute;
   display: flex;
   align-items: center;
   background-color: #ea4335;
-  width: 10vw;
+  width: 11vw;
   height: 2px;
   z-index: 5;
   margin-top: -1px;
