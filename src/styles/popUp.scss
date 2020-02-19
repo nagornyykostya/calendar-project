@@ -16,6 +16,11 @@
   overflow-y: scroll;
   background-color: white;
 
+  @include for-middle-down {
+    width: 350px;
+    margin-left: -175px;
+  }
+
   &__close-btn {
     margin-left: auto;
     border: none;

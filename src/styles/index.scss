@@ -1,3 +1,4 @@
+@import "breakpoints.scss";
 @import "header.scss";
 @import "navigation.scss";
 @import "popUp.scss";
@@ -13,4 +14,4 @@
     flex-direction: column;
     height: 700px;
     overflow-y: scroll;
-}
+} 

@@ -7,13 +7,23 @@
   background-color: white;
   margin-top: 64px;
 
+  
+
+
   &__grid {
     display: flex;
     flex-direction: row;
     flex: 1;
     justify-content: space-around;
     width: 100vw;
+    @include for-middle-down {
+      justify-content: space-between;
+      margin-left: 28px;
+    }
 
+    @include for-small-down {
+      margin-left: 0px;
+    }
   }
   
 
@@ -32,6 +42,11 @@
     min-height: 50px;
     margin-top: 20px;
 
+    @include for-middle-down {
+      margin-left: 13px;
+      margin-right: 13px;
+    }
+
     &:last-child {
       margin-right: 70px;
     }
@@ -47,11 +62,14 @@
     justify-content: flex-end;
     align-items: flex-end;
     min-height: 50px;
-    width: 81px;
-    min-width: 81px;
+    width: 55px;
     margin-top: 20px;
     font-size: 12px;
     cursor: pointer;
+
+    @include for-middle-down {
+      display: none;
+    }
   }
 
   &__day-of-week {
@@ -69,6 +87,11 @@
     height: 50px;
     border-radius: 50%;
 
+    @include for-middle-down {
+      font-size: 18px;
+      width: 25px;
+      height: 25px;
+    }
     &_selected {
       background-color: #1a73e8;
       color: white;
