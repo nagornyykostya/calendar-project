@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   height: 64px;
-  border-bottom: 0.5px solid grey;
+  border-bottom: 0.5px solid #d2d0d0;
   background-color: white;
   position: fixed;
   z-index: 12;
@@ -441,7 +441,7 @@
   align-items: flex-start;
   padding-left: 10px;
   height: 60px;
-  border-top: 1px solid grey;
+  border-top: 1px solid #d2d0d0;
   cursor: pointer;
 }
 .day-column__hour-cell:hover {
