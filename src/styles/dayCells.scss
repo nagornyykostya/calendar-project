@@ -5,7 +5,7 @@
   flex-direction: row;
   justify-content: flex-start;
   @include for-middle-down {
-  padding: 0 10px;
+    padding: 0 10px;
   }
 }
 
@@ -31,7 +31,7 @@
     cursor: pointer;
 
     &:hover {
-      box-shadow: inset 0px 0px 2px 1px rgba(26,115,232,1);
+      box-shadow: inset 0px 0px 2px 1px rgba(26, 115, 232, 1);
     }
 
     &:first-child {
@@ -51,12 +51,11 @@
     box-shadow: 0px 2px 27px -11px rgb(187, 185, 185);
     border: 1px solid #b7b7b7;
     cursor: pointer;
-      
-      @include for-middle-down {
-        font-size: 8px;
-        width: 50px;
-        overflow: hidden;
 
+    @include for-middle-down {
+      font-size: 8px;
+      width: 50px;
+      overflow: hidden;
     }
 
     @include for-small-down {
@@ -65,21 +64,20 @@
       overflow: hidden;
     }
 
-
     &:hover {
-      box-shadow: 0px 0px 15px -2px rgba(122,122,122,1);
+      box-shadow: 0px 0px 15px -2px rgba(122, 122, 122, 1);
       transition: box-shadow 0.3s ease-in-out;
       z-index: 10;
     }
   }
   &__reminder-item-number {
-      font-size: 12px;
-      color: black;
-      font-weight: bold;
+    font-size: 12px;
+    color: black;
+    font-weight: bold;
 
-      @include for-middle-down {
+    @include for-middle-down {
       display: none;
-      }
+    }
   }
 
   &__reminder-item-title {
@@ -98,7 +96,6 @@
     height: 2px;
     z-index: 5;
     margin-top: -1px;
-    
   }
   &__current-time {
     background: #ea4335;
@@ -106,9 +103,8 @@
     font-size: 12px;
     padding: 2px 4px;
     @include for-middle-down {
-    display: none;
-}
-    
+      display: none;
+    }
   }
 }
 
@@ -122,15 +118,19 @@
 
   @include for-middle-down {
     margin-right: 0px;
-
   }
-
 }
 
 .hours-column {
   display: flex;
   flex-direction: column;
   color: grey;
+
+  @include for-middle-down {
+    position: absolute;
+    left: -23px;
+    top: 3px;
+  }
 
   &__hour-cell {
     display: flex;
@@ -141,9 +141,9 @@
     width: 55px;
     height: 60px;
     font-size: 12px;
-
     @include for-middle-down {
-      display: none;
+      font-size: 8px;
+
     }
   }
 }

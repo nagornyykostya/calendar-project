@@ -55,6 +55,18 @@
     white-space: nowrap;
     margin-left: 20px;
     color: #3c4043;
+
+    @include for-middle-down {
+      font-size: 16px;
+      margin-left: 5px;
+    }
+
+    @include for-small-down {
+      position: absolute;
+      font-size: 14px;
+      top: 60px;
+      left: 10px;
+    }
   }
 
   &__settings-actions {
@@ -63,6 +75,9 @@
     position: relative;
     margin-left: auto;
     margin-right: 20px;
+    @include for-middle-down {
+      display: none;
+    }
   }
 
   &__setting-btn {

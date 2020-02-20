@@ -52,12 +52,31 @@
   margin-left: 20px;
   color: #3c4043;
 }
+@media screen and (max-width: 699px) {
+  .header__selected-period {
+    font-size: 16px;
+    margin-left: 5px;
+  }
+}
+@media screen and (max-width: 399px) {
+  .header__selected-period {
+    position: absolute;
+    font-size: 14px;
+    top: 60px;
+    left: 10px;
+  }
+}
 .header__settings-actions {
   display: flex;
   align-items: center;
   position: relative;
   margin-left: auto;
   margin-right: 20px;
+}
+@media screen and (max-width: 699px) {
+  .header__settings-actions {
+    display: none;
+  }
 }
 .header__setting-btn {
   display: flex;
@@ -520,6 +539,13 @@
   flex-direction: column;
   color: grey;
 }
+@media screen and (max-width: 699px) {
+  .hours-column {
+    position: absolute;
+    left: -23px;
+    top: 3px;
+  }
+}
 .hours-column__hour-cell {
   display: flex;
   flex-direction: column;
@@ -532,7 +558,7 @@
 }
 @media screen and (max-width: 699px) {
   .hours-column__hour-cell {
-    display: none;
+    font-size: 8px;
   }
 }
 
@@ -544,8 +570,9 @@
 .week-grid {
   display: flex;
   flex-direction: column;
-  height: 700px;
+  height: 100vh;
   overflow-y: scroll;
+  padding-bottom: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */
