@@ -281,6 +281,7 @@
   height: 50px;
   border-radius: 50%;
   margin-top: 5px;
+  color: #70757a;
 }
 @media screen and (max-width: 699px) {
   .navigation__date-of-month {
