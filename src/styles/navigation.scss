@@ -65,7 +65,7 @@
     width: 55px;
     margin-top: 20px;
     font-size: 12px;
-    cursor: pointer;
+    color: #3c4043;
 
     @include for-middle-down {
       display: none;
@@ -76,6 +76,7 @@
     display: block;
     font-size: 14px;
     text-align: center;
+    color: #70757a;
   }
 
   &__date-of-month {

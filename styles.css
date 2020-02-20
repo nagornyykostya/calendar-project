@@ -259,7 +259,7 @@
   width: 55px;
   margin-top: 20px;
   font-size: 12px;
-  cursor: pointer;
+  color: #3c4043;
 }
 @media screen and (max-width: 699px) {
   .navigation__gmt {
@@ -270,6 +270,7 @@
   display: block;
   font-size: 14px;
   text-align: center;
+  color: #70757a;
 }
 .navigation__date-of-month {
   display: flex;
