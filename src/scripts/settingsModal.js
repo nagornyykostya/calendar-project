@@ -1,5 +1,7 @@
 import { initCalendar } from './inititalCalendarData.js';
 import { setStorage } from './storage.js';
+import { updateDefaultColor } from './gateWay.js';
+
 
 const colorBaseInput = document.getElementById("base-color");
 const settingsModal = document.querySelector('.header__settings-modal');
@@ -21,9 +23,16 @@ const onCloseModalBtn = (e) => {
 
 const onSaveSettingsClick = (e) => {
     e.preventDefault();
-    initCalendar.itemColor = colorBaseInput.value;
-    settingsModal.setAttribute("style", "visibility: hidden;");
-    setStorage();
+   const newDefaultColor = {
+       defaultColor: colorBaseInput.value
+   }
+    updateDefaultColor(newDefaultColor)
+        .then(data => {
+            initCalendar.itemColor = data.defaultColor;
+            settingsModal.setAttribute("style", "visibility: hidden;");
+            setStorage();
+        })
+   
 }
 
 export const initSettingsModalListeners = () => {

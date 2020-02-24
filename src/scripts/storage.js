@@ -16,4 +16,4 @@ export const getStorage = () => {
 export const setStorage = () => {
     localStorage.setItem("itemColor", JSON.stringify(`${initCalendar.itemColor}`));
     localStorage.setItem("remindersStorage", JSON.stringify(remindersStorage));
-};
+}; 

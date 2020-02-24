@@ -22,4 +22,4 @@ export let initCalendar = {
             this.selectedWeek -= 7 * miliSecondsPerDay;
         }
     }
-}
+} 

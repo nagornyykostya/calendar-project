@@ -19,9 +19,9 @@
     <header class="header">
         <button class="header__create" title="Create new reminder">
             <i class="large material-icons header__create_icon">add</i>
-            Создать
+            Create
         </button>
-        <button class="header__today" title="Go to today">Сегодня</button>
+        <button class="header__today" title="Go to today">Today</button>
         <div class="weeks-selectors-block">
             <button class="weeks-selectors-block__previous-week" title="Previous week" data-direction="false">
                 <i class="large material-icons">chevron_left</i>
@@ -48,6 +48,22 @@
             </form>
         </div>
     </header>
+
+
+    <!-- error popup -->
+    <div class="error-popup">
+        <h3 class="error-popup__message"></h3>
+        <button class="error-popup__close-modal-btn"><i class="large material-icons">close</i></button>
+    </div>
+
+    <!-- loader -->
+
+    <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 
     <!-- popup form -->
 
@@ -93,6 +109,7 @@
             <div class="day-columns">
             </div>
     </div>
+
     <script src="src/scripts/index.js" type="module"></script>
 </body>
 
