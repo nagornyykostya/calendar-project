@@ -1,11 +1,10 @@
 import { initCalendar } from './inititalCalendarData.js';
-import { setStorage } from './storage.js';
 import { changeWeek } from './weekSelector.js';
 import { renderNavbar } from './renderNavbar.js';
 import { renderCalendar } from './renderCalendar.js';
 
 const miliSecondsPerDay = 86400000;
-const monthes = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+const monthes = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const popUp = document.querySelector('.pop-up-form');
 const deleteBtn = document.querySelector(".calendar-issues-form__delete-btn")
 const title = document.getElementById("title");
@@ -42,17 +41,25 @@ const onTodayClick = () => {
     renderNavbar();
     renderCalendar();
     renderHeaderText();
-    setStorage();
 }
 
 const todayBtn = document.querySelector('.header__today');
 
 // Create Btn
+
+const getCurrentDate = () => {
+    const dateNow2 = new Date();
+    return `${dateNow2.getFullYear()}-${dateNow2.getMonth() < 10 
+        ? `0${dateNow2.getMonth() + 1}` 
+        : `${dateNow2.getMonth() + 1}`}-${dateNow2.getDate() < 10 
+        ? `0${dateNow2.getDate()}` 
+        : `${dateNow2.getDate()}`}`
+}
+
 const createBtn = document.querySelector('.header__create');
 const onCreateBtnClick = () => {
     popUp.setAttribute("style", "visibility: visible;")
-    const dateNow2 = new Date();
-    date.value = `${dateNow2.getFullYear()}-${dateNow2.getMonth() < 10 ? `0${dateNow2.getMonth() + 1}` : `${dateNow2.getMonth() + 1}`}-${dateNow2.getDate() < 10 ? `0${dateNow2.getDate()}` : `${dateNow2.getDate()}`}`
+    date.value = getCurrentDate();
 
     title.value = null;
     startTime.value = null;
@@ -62,7 +69,6 @@ const onCreateBtnClick = () => {
     initCalendar.id = null;
     deleteBtn.disabled = true;
     initCalendar.editMode = false;
-    setStorage();
 };
 
 export const initHeaderEventListeners = () => {

@@ -3,7 +3,7 @@ export const renderSideBar = () => {
     let arrSideBarHours = [];
 
     for (let i = 0; i < 24; i++) {
-        arrSideBarHours.push(`<div class="hours-column__hour-cell">${i}:00</div>`)
+        arrSideBarHours.push(`<div class="hours-column__hour-cell">${i < 10 ? "0" + i : i}:00</div>`)
     }
     sideBar.innerHTML = arrSideBarHours.join("")
 }
