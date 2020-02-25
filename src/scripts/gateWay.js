@@ -1,7 +1,7 @@
 import { renderError } from './erroPopUp.js';
 
-const baseLink = 'http://5e4ebaa86272aa0014230ec4.mockapi.io/Calendar';
-const defaultColorLink = 'http://5e4ebaa86272aa0014230ec4.mockapi.io/calendarInitColor';
+const baseLink = 'https://5e4ebaa86272aa0014230ec4.mockapi.io/Calendar';
+const defaultColorLink = 'https://5e4ebaa86272aa0014230ec4.mockapi.io/calendarInitColor';
 
 // Reminders items REST scripts
 
